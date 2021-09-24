@@ -7,6 +7,7 @@
 ## General Info
 This browser based web application to ...
 	
+    Dragnex is here
 ## Technologies
 Technologies used for this project:
 * HTML, CSS
