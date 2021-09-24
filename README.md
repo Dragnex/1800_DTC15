@@ -6,6 +6,7 @@
 
 ## General Info
 This browser based web application to ...
+Hello this is Sam
 	
     Dragnex is here
 ayo this is my line!
