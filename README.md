@@ -6,8 +6,6 @@
 
 ## General Info
 This browser based web application to ...
-
-Ayo this is my line! 
 	
 ## Technologies
 Technologies used for this project:
