@@ -1,0 +1,13 @@
+nav {
+    background-color: black;
+    color: white;
+}
+
+.navbar {
+    display: grid;
+    grid-template-columns: 15% 70% 15%;
+}
+
+#logo {
+    justify-self: center;
+}
