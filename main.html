@@ -12,40 +12,47 @@
     <link href="./navbar.css" rel="stylesheet" />
     <link href="./main.css" rel="stylesheet" />
 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <title>My Streaks List</title>
   </head>
   <body>
     <div class="pos-f-t">
-      <div class="collapse" id="navbarToggleExternalContent">
-        <div class="bg-dark p-4">
-          <h5 class="text-white h4">Collapsed content</h5>
-          <span class="text-muted">Toggleable via the navbar brand.</span>
-        </div>
-      </div>
-      <nav class="navbar navbar-dark bg-dark">
+      <nav class="navbar navbar-dark bg-dark navbar-top">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <h1 id="logo">SkillStreaks</h1>
       </nav>
+      <div class="collapse" id="navbarToggleExternalContent">
+        <div class="bg-dark p-4">
+          <h5 class="text-white h4"><a href="./profile.html">Profile</a></h5>
+          <h5 class="text-white h4"><a href="./social.html">Friends</a></h5>
+          <h5 class="text-white h4"><a href="./settings.html">Settings</a></h5>
+          <div class="text-muted"><a href="./contact.html">Contact</a></div>
+          <div class="text-muted"><a href="./faq.html">FAQ</a></div>
+        </div>
+      </div>
     </div>
 
     <section id="content">
-        <ul class="list-group">
-            <li class="list-group-item"><span class="streak-count">3 days </span><a href="./streak/germanlesson">German lesson</a></li>
-            <li class="list-group-item"><span class="streak-count">4 weeks </span><a href="./streak/pianopractice">Piano practice</a></li>
-            <li class="list-group-item"><span class="streak-count">5 days </span><a href="./streak/goforajog">Go for a jog</a></li>
-            <li class="list-group-item"><span class="streak-count">17 days </span><a href="./streak/readachapterofbook">Read a chapter of book</a></li>
-            <li class="list-group-item"><span class="streak-count">1 day </span><a href="./streak/cookanewrecipe">Cook a new recipe</a></li>
-          </ul>
+        <ul id="list-of-streaks">
+            <li class="list-group-item"><input type="button" value="3 days" class="streak-count" /><p class="streak-title">German lesson</p></li>
+            <li class="list-group-item"><input type="button" value="4 weeks" class="streak-count" /><p class="streak-title">Piano practice</p></li>
+            <li class="list-group-item"><input type="button" value="5 days" class="streak-count" /><p class="streak-title">Go for a jog</p></li>
+            <li class="list-group-item"><input type="button" value="17 days" class="streak-count" /><p class="streak-title">Read a chapter of book</p></li>
+            <li class="list-group-item"><input type="button" value="1 day" class="streak-count" /><p class="streak-title">Cook a new recipe</p></li>
+        </ul>
 
-        <button type="button" class="btn btn-primary">Add New Goal</button>
+          <div id="no-streaks-notice">
+            <h3>Whoops, you haven't started any streaks! <a href="./newstreak">Get Started</a></h3>
+          </div>
 
-        <nav class="navbar fixed-bottom navbar-light bg-light">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="#">Home</a>
-            <a class="navbar-brand" href="#">Social</a>
-            <a class="navbar-brand" href="#">Profile</a>
+        <nav class="navbar fixed-bottom navbar-light bg-dark text-light">
+          <div class="footer">
+            <a class="navbar-brand" href="./main.html"><span class="material-icons footer-icon">home</span></a>
+            <a class="navbar-brand" href="./social.html"><span class="material-icons footer-icon">add</span></a>
+            <a class="navbar-brand" href="./profile.html"><span class="material-icons footer-icon">account_circle</span></a>
           </div>
         </nav>
     </section>

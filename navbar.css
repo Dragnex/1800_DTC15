@@ -3,11 +3,23 @@ nav {
     color: white;
 }
 
-.navbar {
+.navbar-top {
     display: grid;
     grid-template-columns: 15% 70% 15%;
 }
 
 #logo {
     justify-self: center;
+}
+
+
+.footer {
+    display: grid;
+    grid-template-columns: 33% 34% 33%;
+    width: 100vw;
+    justify-items: center;
+}
+
+.footer-icon {
+    color: white;
 }
