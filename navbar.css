@@ -5,12 +5,18 @@ nav {
 
 .navbar-top {
     display: grid;
-    grid-template-columns: 15% 70% 15%;
+    grid-template-columns: 15% 10% 50% 25%;
+}
 
+.color-block-nav {
+    display: grid;
+    background: white;
+    grid-column: 4;
 }
 
 #logo {
     justify-self: center;
+    grid-column: 3;
 }
 
 

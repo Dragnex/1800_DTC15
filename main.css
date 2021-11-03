@@ -8,14 +8,14 @@ body {
 #content {
     display: grid;
     height: 80.4vh;
-    grid-template-rows: 100%;
-    grid-template-columns: 5% 10% 5% 80% ;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 5% 10% 10% 60% 10%;
 }
 
 .color-block {
     display: grid;
-    background: white;
     grid-column: 2;
+    grid-row: 1 / 3;
     grid-template-columns: 25% 25% 25% 25%;
 }
 
@@ -43,23 +43,31 @@ body {
     grid-column: 4;
 }
 
-#list-of-streaks li {
+#list-of-streaks {
     display: grid;
     grid-template-rows: auto;
-    background: rgb(255, 255, 255);
 
+    grid-row: 1 / 3;
+    grid-column: 4;
+    padding-top: 5%;
 }
 
 ul {
     padding: 0;
-    grid-column: 4;
-    grid-row: 1 / 3;
 }
 
 li {
     display: grid;
-    grid-template-columns: 30% 70%;
     justify-items: center;
+}
+
+.streak-count {
+    display: block;
+
+}
+
+.streak-title {
+    display: block;
 }
 
 #no-streaks-notice {

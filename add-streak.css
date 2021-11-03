@@ -2,17 +2,37 @@
     display: grid;
     background: #FDE74C;
     grid-template-rows: 25% 25% 25% 25%;
-    grid-template-columns: 5% 10% 5% 80%;
-    align-items: center;
-    padding-right: 10%;
+    grid-template-columns: 5% 10% 10% 60% 10%;
     height: 80.4vh;
+}
+
+.square-background {
+    display: grid;
+    background: white;
+    grid-column: 4;
+    grid-row: 1 / 5;
+}
+
+.form-section {
+    display: block;
+    text-align: center;
+}
+
+#add-activity-button {
+    display: block;
+    width: 75%;
+    grid-row: 3;
+}
+
+.typing-input {
+    width: 100%
 }
 
 .color-block {
     display: grid;
     background: white;
     grid-column: 2;
-    grid-row: 1 ;
+    grid-row: 1 / 5;
     grid-template-columns: 25% 25% 25% 25%;
 }
 
@@ -40,17 +60,7 @@
     grid-column: 4;
 }
 
-.typing-input {
-    width: 100%
-}
 
-.form-section {
-    display: block;
-    text-align: center;
-    grid-column: 4;
-}
 
-#add-activity-button {
-    display: block;
-    grid-column: 4;
-}
+
+
