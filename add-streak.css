@@ -1,0 +1,16 @@
+#content {
+    display: grid;
+    grid-template-rows: 25% 25% 25% 25%;
+    align-items: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    height: 70vh;
+}
+
+.typing-input {
+    width: 100%
+}
+
+.form-section {
+    text-align: center;
+}
