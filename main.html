@@ -11,6 +11,7 @@
 
     <link href="./navbar.css" rel="stylesheet" />
     <link href="./main.css" rel="stylesheet" />
+    <link href="./footer.css" rel="stylesheet" />
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -18,7 +19,7 @@
   </head>
   <body>
     <div class="pos-f-t">
-      <nav class="navbar navbar-dark bg-dark navbar-top">
+      <nav class="navbar navbar-dark navbar-top">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -36,6 +37,12 @@
     </div>
 
     <section id="content">
+        <div class="color-block">
+          <div class="color-block-orange"></div>
+          <div class="color-block-blue"></div>
+          <div class="color-block-green"></div>
+          <div class="color-block-red"></div>
+        </div>
         <ul id="list-of-streaks">
             <li class="list-group-item"><input type="button" value="3 days" class="streak-count" /><p class="streak-title">German lesson</p></li>
             <li class="list-group-item"><input type="button" value="4 weeks" class="streak-count" /><p class="streak-title">Piano practice</p></li>
@@ -48,7 +55,7 @@
             <h3>Whoops, you haven't started any streaks! <a href="./newstreak">Get Started</a></h3>
           </div>
 
-        <nav class="navbar fixed-bottom navbar-light bg-dark text-light">
+        <nav class="navbar fixed-bottom navbar-light text-light">
           <div class="footer">
             <a class="navbar-brand" href="./main.html"><span class="material-icons footer-icon">home</span></a>
             <a class="navbar-brand" href="./add-streak.html"><span class="material-icons footer-icon">add</span></a>

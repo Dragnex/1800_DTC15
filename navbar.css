@@ -1,11 +1,12 @@
 nav {
-    background-color: black;
+    background-color: #211A1E;
     color: white;
 }
 
 .navbar-top {
     display: grid;
     grid-template-columns: 15% 70% 15%;
+
 }
 
 #logo {
