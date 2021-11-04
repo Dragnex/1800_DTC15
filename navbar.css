@@ -4,7 +4,7 @@ nav {
 }
 
 .navbar-top {
-    display: grid;
+    display: grid !important;
     grid-template-columns: 15% 10% 50% 25%;
 }
 
