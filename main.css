@@ -7,7 +7,7 @@ body {
 
 #content {
     display: grid;
-    height: 80.4vh;
+    height: 82.8vh;
     grid-template-rows: 5% 90% 5%;
     grid-template-columns: 5% 10% 10% 60% 10%;
 }
