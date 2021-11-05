@@ -52,16 +52,69 @@
         <div id="firebaseui-auth-container"></div>
 
         <script>
+            function writeHikes() {
+                    //define a variable for the collection you want to create in Firestore to populate data
+                    var hikesRef = db.collection("Hikes");
+
+                    hikesRef.add({
+                        code:"BBY01",
+                        name: "Burnaby Lake Park Trail",    //replace with your own city?
+                        city: "Burnaby",
+                        province: "BC",
+                        level: "easy",
+                        length: "10 km",
+                        length_time: "2h 33mm"
+                    });
+                    hikesRef.add({
+                        code:"AM01",
+                        name: "Buntzen Lake Trail Trail",    //replace with your own city?
+                        city: "Anmore",
+                        province: "BC",
+                        level: "moderate",
+                        length: "10.5 km",
+                        length_time: "3h 17mm"
+                    });
+                    hikesRef.add({
+                        code:"NV01",
+                        name: "Mount Seymoure Trail",    //replace with your own city?
+                        city: "North Vancouver",
+                        province: "BC",
+                        level: "hard",
+                        length: "8.2 km",
+                        length_time: "3h 20m"
+                    });
+                    hikesRef.add({
+                        Skills: {
+                          bruh: "bruh"
+                        }
+                    });
+            }
             // Initialize the FirebaseUI Widget using Firebase.
             var ui = new firebaseui.auth.AuthUI(firebase.auth());
-
             var uiConfig = {
                     callbacks: {
                         signInSuccessWithAuthResult: function (authResult, redirectUrl) {
                             // User successfully signed in.
                             // Return type determines whether we continue the redirect automatically
                             // or whether we leave that to developer to handle.
-                            return true;
+                            var user = authResult.user;
+                            //Determine whether the user is  anew user or not
+                            if (authResult.additionalUserInfo.isNewUser){
+                                db.collection("users").doc(user.uid).add({
+                                    name: user.displayName,
+                                    email: user.email,
+                                    Skills: "bruh"
+                                }).then(function(){
+                                    window.location.assign("main.html");
+                                })
+                                .catch(function(e){
+                                    console.error("Error: " + e);
+                                })
+                            }
+                            else{
+                                return true;
+                            }
+                            return false
                         },
                         uiShown: function () {
                             // The widget is rendered.

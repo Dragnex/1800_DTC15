@@ -7,7 +7,9 @@ var firebaseConfig = {
     appId: "1:270412540189:web:2f48fb470f8a69db66d9f4"
   };
 
+  
 const app = firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
 
 function sayHello() {
     firebase.auth().onAuthStateChanged(function (user) {
