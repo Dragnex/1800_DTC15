@@ -100,10 +100,12 @@
                             var user = authResult.user;
                             //Determine whether the user is  anew user or not
                             if (authResult.additionalUserInfo.isNewUser){
-                                db.collection("users").doc(user.uid).add({
+                                db.collection("users").doc(user.uid).set({
                                     name: user.displayName,
                                     email: user.email,
-                                    Skills: "bruh"
+                                    Skills: {
+                                      test: "test"
+                                    }
                                 }).then(function(){
                                     window.location.assign("main.html");
                                 })
