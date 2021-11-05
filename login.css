@@ -1,39 +1,11 @@
 .background {
     display: grid;
-    background: #FDE74C;
+    background-color: #FDE74C;
     width: 100vw;
     height: 100vh;
-    grid-template-rows: 50% 12.5% 12.5% 12.5% 12.5%;
+    grid-template-rows: 0% 20%;
 }
 
-.login-color-block {
-    display: grid;
-    grid-row: 2 / 6;
-    background: rgb(85, 37, 37);
-    grid-template-rows: 25% 25% 25% 25%;
-}
-
-.login-color-block-orange {
-    display: block;
+nav {
     grid-row: 1;
-    background: #E4572E;
 }
-
-.login-color-block-blue {
-    display: block;
-    grid-row: 2;
-    background: #5BC0EB;
-}
-
-.login-color-block-green {
-    display: block;
-    grid-row: 3;
-    background: #9BC53D;
-}
-
-.login-color-block-red {
-    display: block;
-    grid-row: 4;
-    background: #C3423F;
-}
-
