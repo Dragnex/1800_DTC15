@@ -1,0 +1,48 @@
+#content {
+    display: grid;
+    grid-template-rows: 5% 10% 20% 10%;
+    row-gap: 5%;
+    text-align: center;
+    justify-items: center;
+    overflow: scroll;
+    height: 100vh;
+    padding-top: 5%;
+    padding-bottom: 10%;
+}
+
+#top-button-bar {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 90%;
+}
+
+#back-button {
+    justify-self: start;
+}
+
+#edit-button {
+    justify-self: end;
+}
+
+#log-description-textarea {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#done-button {
+    width: 50%;
+    height: 50%;
+    align-self: center;
+    justify-self: center;
+}
+
+#activity-history {
+    list-style: none;
+    padding-right: 2rem;
+}
+
+#activity-history li {
+    border: 1px solid black;
+    text-align: start;
+}
