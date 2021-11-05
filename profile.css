@@ -1,0 +1,73 @@
+
+.profile-container {
+    display: grid;
+    height: 82.8vh;
+    width: 100vw;
+    background: #FDE74C;
+    grid-template-columns: 75% 25%;
+}
+
+.sidebar-section {
+    display: grid;
+    background: rgb(156, 86, 86);
+    grid-column: 2;
+    padding: 10%;
+    grid-template-rows: 25% 25% 25% 25%;
+    font-size: auto;
+    gap: 1%;
+    font-size: 35px;
+}
+
+.friends-button {
+    display: flex;
+    background: chartreuse;
+    grid-row: 1;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.streaks-button {
+    display: flex;
+    background: chartreuse;
+    grid-row: 2;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.achievement-button {
+    display: flex;
+    background: chartreuse;
+    grid-row: 3;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.active-challenges-button {
+    display: flex;
+    background: chartreuse;
+    grid-row: 4;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.profile-section {
+    display: grid;
+    background-color: black;
+    grid-column: 1;
+
+}
+
+.profile-img {  
+    display: block;
+    height: 25%;
+}
+
+.text-box {
+    display: block;
+    height: 500px;
+}

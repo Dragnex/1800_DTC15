@@ -1,3 +1,9 @@
+body {
+    display: grid;
+    grid-template-rows: 7% 86% 7%;
+    background-color: #FDE74C;
+}
+
 #content {
     display: grid;
     grid-template-rows: 5% 10% 20% 10%;
@@ -18,10 +24,14 @@
 
 #back-button {
     justify-self: start;
+    background-color: black;
+    color: white;
 }
 
 #edit-button {
     justify-self: end;
+    background-color: black;
+    color: white;
 }
 
 #log-description-textarea {
@@ -31,10 +41,12 @@
 }
 
 #done-button {
-    width: 50%;
+    width: 40%;
     height: 50%;
     align-self: center;
     justify-self: center;
+    background-color: black;
+    color: white;
 }
 
 #activity-history {
