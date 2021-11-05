@@ -1,31 +1,26 @@
 #content {
     display: grid;
     background: #FDE74C;
-    grid-template-rows: 25% 25% 25% 25%;
-    grid-template-columns: 5% 10% 10% 60% 10%;
-    height: 82.3vh;
+    grid-template-rows: 15% 30% 40%;
+    height: 100vh;
+    justify-items: center;
 }
 
-.square-background {
-    display: grid;
-    background: white;
-    grid-column: 4;
-    grid-row: 1 / 5;
+.page-title {
+    padding-top: 10%;
 }
 
 .form-section {
-    display: block;
     text-align: center;
 }
 
 #add-activity-button {
-    display: block;
-    width: 75%;
-    grid-row: 3;
+    width: 30%;
+    margin-top: 5%;
 }
 
-.typing-input {
-    width: 100%
+#log-activity-details {
+    width: 80%;
 }
 
 /* .color-block {
