@@ -1,6 +1,6 @@
 .background {
     display: grid;
-    background: #FDE74C;
+    background-color: #FDE74C;
     width: 100vw;
     height: 100vh;
     grid-template-rows: 25% 12.5% 12.5% 12.5% 12.5%;
