@@ -6,8 +6,8 @@ function PopulateSkills(user){
             console.log(key, value)
             htmlObject = document.createElement('div')
             htmlObject.setAttribute("class", "list-group-item")
-
-            currentSkill = skillTemplate.replace("VALUE", value["interval"]).replace("TITLE", key)
+            interval = value["perInterval"] + " " + value["interval"]
+            currentSkill = skillTemplate.replace("VALUE", interval).replace("TITLE", key)
 
             htmlObject.innerHTML = currentSkill
             document.getElementById("list-of-streaks").appendChild(htmlObject)
