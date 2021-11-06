@@ -9,7 +9,7 @@
 
 .sidebar-section {
     display: grid;
-    background: rgb(156, 86, 86);
+    /* background: rgb(156, 86, 86); */
     grid-column: 2;
     padding: 10%;
     grid-template-rows: 25% 25% 25% 25%;
@@ -20,7 +20,7 @@
 
 .friends-button {
     display: flex;
-    background: chartreuse;
+    /* background: chartreuse; */
     grid-row: 1;
     justify-content: center;
     align-items: center;
@@ -29,7 +29,7 @@
 
 .streaks-button {
     display: flex;
-    background: chartreuse;
+    /* background: chartreuse; */
     grid-row: 2;
     justify-content: center;
     align-items: center;
@@ -38,7 +38,7 @@
 
 .achievement-button {
     display: flex;
-    background: chartreuse;
+    /* background: chartreuse; */
     grid-row: 3;
     justify-content: center;
     align-items: center;
@@ -47,7 +47,7 @@
 
 .active-challenges-button {
     display: flex;
-    background: chartreuse;
+    /* background: chartreuse; */
     grid-row: 4;
     text-align: center;
     justify-content: center;
@@ -62,7 +62,7 @@
 
 }
 
-.profile-img {  
+.profile-img {
     display: block;
     height: 25%;
 }
