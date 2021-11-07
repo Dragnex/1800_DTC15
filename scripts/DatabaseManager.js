@@ -1,5 +1,6 @@
 function CreateSkill(user, name, description, eachInterval, perInterval){
-    newSkill[name] = {
+    let Skills = {}
+    Skills[name] = {
         description: description,
         interval: eachInterval,
         perInterval: perInterval,
@@ -7,12 +8,10 @@ function CreateSkill(user, name, description, eachInterval, perInterval){
 
         }
     }
-    console.log(newSkill)
+    console.log(Skills)
     db.collection("users").doc(user.uid).set({
-       Skills: {
-          newSkill
-        }
-    })
+        Skills
+    }, { merge: true })
 }
 
 function NewUser(user){

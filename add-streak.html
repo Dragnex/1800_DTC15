@@ -13,8 +13,17 @@
     <link href="./add-streak.css" rel="stylesheet" />
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
     <title>SkillStreaks - Add An Activity Streak</title>
+    <script src="./scripts/FirebaseData.js"></script>
   </head>
   <body>
     <div class="pos-f-t">
@@ -38,18 +47,19 @@
 
     <section id="content">
         <h2 class="form-section page-title">Add Activity</h2>
+
         <div id="title" class="form-section">
-            <label for="title">What are you going to do?</label>
-            <textarea id="log-activity-details" rows="8"></textarea>
+          <label for="title">What are you going to do?</label>
+          <textarea id="log-activity-details" rows="8"></textarea>
         </div>
+
         <div id="frequency" class="form-section">
             <label for="frequency-number">How often will you do this?</label>
             <input id="frequency-number" class="typing-input" type="number"/>
-            <p>time per</p>
             <select name="frequency" id="frequency-selection">
-                <option value="daily">Day</option>
-                <option value="weekly">Week</option>
-                <option value="monthly">Month</option>
+                <option value="daily">Daily</option>
+                <option value="weekly">Weekly</option>
+                <option value="monthly">Monthly</option>
             </select>
             <br/>
         <input id="add-activity-button" type="button" value="Add Activity"/>
@@ -70,6 +80,26 @@
           <a class="navbar-brand" href="./profile.html"><span class="material-icons footer-icon">account_circle</span></a>
         </div>
     </nav>
+
+    <script src="./scripts/DatabaseManager.js"></script>
+    <script>
+      firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+          // User logged in already or has just logged in.
+          console.log(user.uid);
+          document.getElementById("add-activity-button").addEventListener("click", function() {
+            name = document.getElementById("log-activity-details").value.split('.')[0]
+            description = document.getElementById("log-activity-details").value
+            eachInterval = document.getElementById("frequency-selection").value
+            perInterval = document.getElementById("frequency-number").value
+            CreateSkill(user, name, description, eachInterval, perInterval);
+          });
+        } else {
+          console.log("User is not logged in.")
+        }
+      });
+      
+    </script>
 
       <!-- Option 1: Bootstrap Bundle with Popper -->
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

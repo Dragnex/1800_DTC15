@@ -12,12 +12,6 @@ function PopulateSkills(user){
             htmlObject.innerHTML = currentSkill
             document.getElementById("list-of-streaks").appendChild(htmlObject)
         }
-        Skills.forEach((doc, skillTemplate) => {
-            console.log(doc)
-            //var skillTitle = doc.data(); //gets the name field
-            //console.log(hikeID);
-            //document.getElementById(hikeID).innerText = hikeName;
-        })
     })
     return finalSkills
 }
