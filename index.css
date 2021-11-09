@@ -1,0 +1,24 @@
+body {
+    background-color: #FDE74C;
+}
+
+#content {
+    display: grid;
+    grid-template-rows: 70% 34% 60%;
+    align-items: center;
+}
+
+header {
+    text-align: center;
+    padding: 10%;
+}
+
+#project-pitch {
+    text-align: center;
+    padding: 10%;
+}
+
+#login-link {
+    width: 30%;
+    margin: auto;
+}
