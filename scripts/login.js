@@ -2,7 +2,7 @@ function sayHello() {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             // User is signed in.
-            // Do something for the user here. 
+            // Do something for the user here.
             console.log(user.uid);
             db.collection("users").doc(user.uid)
                 .get()
