@@ -1,6 +1,6 @@
 function PopulateSkills(user){
     let finalSkills = db.collection("users").doc(user.uid).get().then(userData => {
-        let skillTemplate = '<input type="button" value="VALUE" class="streak-count" /><h4 class="streak-title">TITLE</h4>'
+        let skillTemplate = '<input type="button" value="VALUE" class="streak-count" onClick="RedirectStreakDetails()"/><h4 class="streak-title">TITLE</h4>'
         console.log(userData.data())
         for (let [key, value] of Object.entries(userData.data()["Skills"])){
             console.log(key, value)
@@ -14,4 +14,8 @@ function PopulateSkills(user){
         }
     })
     return finalSkills
+}
+
+function RedirectStreakDetails(){
+    window.location.assign("activity-streak-details.html");
 }
