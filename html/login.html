@@ -69,14 +69,20 @@
                             var user = authResult.user;
                             //Determine whether the user is  anew user or not
                             if (authResult.additionalUserInfo.isNewUser){
-                                // db.collection("users").doc(user.uid).set({
-                                //     name: user.displayName,
-                                //     email: user.email,
-                                //     Skills: {
-                                //       test: "test"
-                                //     }
-                                NewUser(user).then(function(){
-                                    window.location.assign("html/main.html");
+                                db.collection("users").doc(user.uid).set({
+                                  name: user.displayName,
+                                  email: user.email,
+                                  Skills: {
+                                    dummySkill: {
+                                      description: "Dummy Skill",
+                                      interval: "Daily",
+                                      perInterval: "2",
+                                      iterations: {
+                                      }
+                                    }
+                                  }
+                                }).then(function(){
+                                    window.location.assign("main.html");
                                 })
                                 .catch(function(e){
                                     console.error("Error: " + e);
