@@ -11,7 +11,9 @@ function CreateSkill(user, name, description, eachInterval, perInterval){
     console.log(Skills)
     db.collection("users").doc(user.uid).set({
         Skills
-    }, { merge: true })
+    }, { merge: true }).then(function(){
+        window.location.assign("main.html");
+    })
 }
 
 function NewUser(user){
