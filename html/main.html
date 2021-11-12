@@ -51,7 +51,10 @@
       </div>
     </div>
 
+    
+
     <section id="content">
+      <h1 style="text-align: center;">Welcome <span id="name-goes-here"></span></h1>
         <!-- <div class="color-block">
           <div class="color-block-orange"></div>
           <div class="color-block-blue"></div>
@@ -91,6 +94,7 @@
           // User logged in already or has just logged in.
           console.log(user.uid);
           PopulateSkills(user);
+          insertName();
         } else {
           console.log("User is not logged in.")
         }
