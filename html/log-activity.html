@@ -14,7 +14,20 @@
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+
     <title>SkillStreaks - Log Activity</title>
+    <script src="../scripts/FirebaseData.js"></script>
   </head>
   <body>
     <div class="pos-f-t">
@@ -46,20 +59,20 @@
             <input id="edit-button" type="button" value="Edit"/>
         </div>
 
-        <h2>Practice German</h2>
+        <h2 id="activity-name">Practice German</h2>
 
         <textarea placeholder="Today, I..." id="log-description-textarea" rows="5"></textarea>
 
         <input id="done-button" type="button" value="Done"/>
 
-        <ul id="activity-history">
-            <li>Did a German lesson</li>
+        <div id="activity-history">
+            <!-- <li>Did a German lesson</li>
             <li>Did 3 crowns of German on Duolingo</li>
             <li>Did a German lesson</li>
             <li>Did 3 crowns of German on Duolingo</li>
             <li>Did a German lesson</li>
-            <li>Did 3 crowns of German on Duolingo</li>
-        </ul>
+            <li>Did 3 crowns of German on Duolingo</li> -->
+        </div>
     </section>
     <nav class="navbar fixed-bottom navbar-light text-light">
         <div class="footer">
@@ -68,6 +81,24 @@
           <a class="navbar-brand" href="./profile.html"><span class="material-icons footer-icon">account_circle</span></a>
         </div>
     </nav>
+
+      <script src="../scripts/AddLog.js"></script>
+      <script>
+        firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+          // User logged in already or has just logged in.
+          console.log(user.uid);
+          PopulateLogs(user);
+          document.getElementById("done-button").addEventListener("click", function() {
+            name = document.getElementById("log-description-textarea").value.split('.')[0]
+            description = document.getElementById("log-description-textarea").value
+            CreateLog(user, name, description);
+          });
+        } else {
+          console.log("User is not logged in.")
+        }
+      });
+      </script>
 
       <!-- Option 1: Bootstrap Bundle with Popper -->
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
