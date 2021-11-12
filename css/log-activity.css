@@ -11,3 +11,8 @@ body {
     justify-content: end;
     padding: 5%;
 }
+
+#activity-log {
+    margin: 15%;
+    overflow: scroll;
+}
