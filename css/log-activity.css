@@ -2,12 +2,14 @@ body {
     background-color: #FDE74C;
 }
 
-#content {
-    text-align: center;
-}
-
 #top-button-bar {
     display: flex;
     justify-content: end;
     padding: 5%;
+}
+
+#activity-log {
+    margin: 15%;
+    overflow: scroll;
+    margin-bottom: 20%;
 }
