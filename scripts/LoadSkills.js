@@ -19,8 +19,8 @@ function PopulateSkills(user){
 function insertName() {
     firebase.auth().onAuthStateChanged(user => {
         // Check if user is signed in:
-        if (user) {                                                                 
-            // Do something for the current logged-in user here: 
+        if (user) {
+            // Do something for the current logged-in user here:
             console.log(user.uid);
             //go to the correct user document by referencing to the user uid
             currentUser = db.collection("users").doc(user.uid);
