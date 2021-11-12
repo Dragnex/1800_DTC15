@@ -1,60 +1,13 @@
 body {
-    display: grid;
-    grid-template-rows: 7% 86% 7%;
     background-color: #FDE74C;
 }
 
 #content {
-    display: grid;
-    grid-template-rows: 5% 10% 20% 10%;
-    row-gap: 5%;
     text-align: center;
-    justify-items: center;
-    overflow: scroll;
-    height: 100vh;
-    padding-top: 5%;
-    padding-bottom: 10%;
 }
 
 #top-button-bar {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    width: 90%;
-}
-
-#back-button {
-    justify-self: start;
-    background-color: black;
-    color: white;
-}
-
-#edit-button {
-    justify-self: end;
-    background-color: black;
-    color: white;
-}
-
-#log-description-textarea {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#done-button {
-    width: 40%;
-    height: 50%;
-    align-self: center;
-    justify-self: center;
-    background-color: black;
-    color: white;
-}
-
-#activity-history {
-    list-style: none;
-    padding-right: 2rem;
-}
-
-#activity-history li {
-    border: 1px solid black;
-    text-align: start;
+    display: flex;
+    justify-content: end;
+    padding: 5%;
 }

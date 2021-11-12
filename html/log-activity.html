@@ -51,21 +51,27 @@
 
     <section id="content">
         <div id="top-button-bar">
-            <button id="back-button">
-                <span class="material-icons">
-                    arrow_back
-                </span>
-            </button>
-            <input id="edit-button" type="button" value="Edit"/>
+            <input id="edit-button" class="btn btn-dark" type="button" value="Edit"/>
         </div>
 
-        <h2 id="activity-name">Practice German</h2>
+        <div class="container">
+          <h2 id="activity-name">Practice German</h2>
 
-        <textarea placeholder="Today, I..." id="log-description-textarea" rows="5"></textarea>
+          <form>
+            <fieldset class="mb-3">
+              <div class="form-group">
+                <label>Describe what you accomplished:</label>
+                <input type="text" placeholder="Today, I..." id="log-description-textarea" class="form-control">
+              </div>
+            </fieldset>
+            <div class="d-flex justify-content-center mt-5">
+              <input id="done-button" type="button" value="Done" class="btn btn-dark"/>
+            </div>
+          </form>
+        </div>
 
-        <input id="done-button" type="button" value="Done"/>
-
-        <div id="activity-history">
+        <p>This section will be moved to the 'activity-streak-details' page.</p>
+        <div id="activity-history" class="list-group">
             <!-- <li>Did a German lesson</li>
             <li>Did 3 crowns of German on Duolingo</li>
             <li>Did a German lesson</li>
