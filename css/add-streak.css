@@ -1,27 +1,28 @@
-#content {
-    display: grid;
-    background: #FDE74C;
-    grid-template-rows: 15% 30% 40%;
+body {
     height: 100vh;
-    justify-items: center;
 }
 
-.page-title {
+#content {
+    height: 86vh;
+    margin-top: 17%;
+}
+
+/* .page-title {
     padding-top: 10%;
-}
+} */
 
-.form-section {
+/* .form-section {
     text-align: center;
-}
+} */
 
-#add-activity-button {
+/* #add-activity-button {
     width: 30%;
     margin-top: 5%;
 }
 
 #log-activity-details {
     width: 80%;
-}
+} */
 
 /* .color-block {
     display: grid;
