@@ -10,14 +10,13 @@ body{
     display: grid;
     width: 100vw;
     background: #FDE74C;
-    grid-template-columns: 75% 25%;
+    grid-template-columns: 10% 65% 25%;
     grid-row: 2;
 }
 
 .sidebar-section {
     display: grid;
-    /* background: rgb(156, 86, 86); */
-    grid-column: 2;
+    grid-column: 3;
     padding: 10%;
     grid-template-rows: 25% 25% 25% 25%;
     font-size: auto;
@@ -33,7 +32,7 @@ body{
 
 .friends-button {
     display: flex;
-    /* background: chartreuse; */
+    background-color: #211A1E;
     grid-row: 1;
     justify-content: center;
     align-items: center;
@@ -42,7 +41,7 @@ body{
 
 .streaks-button {
     display: flex;
-    /* background: chartreuse; */
+    background-color: #211A1E;
     grid-row: 2;
     justify-content: center;
     align-items: center;
@@ -51,7 +50,7 @@ body{
 
 .achievement-button {
     display: flex;
-    /* background: chartreuse; */
+    background-color: #211A1E;
     grid-row: 3;
     justify-content: center;
     align-items: center;
@@ -60,7 +59,7 @@ body{
 
 .active-challenges-button {
     display: flex;
-    /* background: chartreuse; */
+    background-color: #211A1E;
     grid-row: 4;
     text-align: center;
     justify-content: center;
@@ -68,12 +67,6 @@ body{
     border-radius: 15px;
 }
 
-.profile-section {
-    display: grid;
-    background-color: black;
-    grid-column: 1;
-
-}
 
 .profile-img {
     display: block;
@@ -83,4 +76,26 @@ body{
 .text-box {
     display: block;
     height: 500px;
+}
+
+.arrow-icon{
+    color: #211A1E;
+    margin-left: 50%;
+    margin-top: 50%;
+}
+
+.profile-picture {
+    background-color: rgb(255, 255, 255);
+    grid-column: 2;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    justify-self: center;
+    margin-top: 2%;
+}
+
+.profile-info {
+    display: block;
+    grid-column: 2;
+    justify-self: center;
 }
