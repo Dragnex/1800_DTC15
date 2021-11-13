@@ -23,18 +23,27 @@ function PopulateLogs(user, skillName){
     let logList = db.collection("users").doc(user.uid).get().then(userData => {
         let skillTemplate = '<li class="streak-title">TITLE</li>'
         console.log(userData.data())
-        for (let [key, value] of Object.entries(userData.data()["Skills"][skillName]["iterations"])){
-            console.log(key, value)
+        sortedKeys = GetSortedObjectKeys(userData.data()["Skills"][skillName]["iterations"])
+        console.log(sortedKeys)
+        for (let key in sortedKeys){
             htmlObject = document.createElement('div')
             htmlObject.setAttribute("class", "list-group-item")
-            console.log(key)
-            let date = new Date(parseInt(key)).toLocaleDateString("en-US")
-            let time = new Date(parseInt(key)).toLocaleTimeString("en-US")
-            currentSkill = skillTemplate.replace("TITLE", (date + " " + time + " " + value["description"]))
+            let date = new Date(parseInt(sortedKeys[key])).toLocaleDateString("en-US")
+            let time = new Date(parseInt(sortedKeys[key])).toLocaleTimeString("en-US")
+            currentSkill = skillTemplate.replace("TITLE", (date + " " + time + " " + userData.data()["Skills"][skillName]["iterations"][sortedKeys[key]]["description"]))
 
             htmlObject.innerHTML = currentSkill
             document.getElementById("activity-history").appendChild(htmlObject)
         }
     })
     return logList
+}
+
+function GetSortedObjectKeys(object){
+    console.log(object)
+    let keyArray = Object.keys(object);
+    console.log(keyArray)
+    let sortedThing = keyArray.sort().reverse()
+    console.log(sortedThing)
+    return sortedThing
 }
