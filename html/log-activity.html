@@ -51,7 +51,7 @@
 
     <section id="content">
         <div id="top-button-bar">
-            <input id="edit-button" class="btn btn-dark" type="button" value="Edit"/>
+            <input id="edit-button" class="btn btn-dark" type="button" value="Edit" onclick="window.location.href='edit-activity-streak.html'"/>
         </div>
 
         <div class="container">
@@ -81,23 +81,17 @@
           </ul>
         </div>
     </section>
-    <nav class="navbar fixed-bottom navbar-light text-light">
-        <div class="footer">
-          <a class="navbar-brand" href="./main.html"><span class="material-icons footer-icon">home</span></a>
-          <a class="navbar-brand" href="./add-streak.html"><span class="material-icons footer-icon">add</span></a>
-          <a class="navbar-brand" href="./profile.html"><span class="material-icons footer-icon">account_circle</span></a>
-        </div>
-    </nav>
 
       <script src="../scripts/AddLog.js"></script>
       <script>
+        document.getElementById("activity-name").innerHTML = localStorage.getItem("activeStreak");
         firebase.auth().onAuthStateChanged((user) => {
         if (user) {
           // User logged in already or has just logged in.
           console.log(user.uid);
-          PopulateLogs(user);
+          PopulateLogs(user, localStorage.getItem("activeStreak"));
           document.getElementById("done-button").addEventListener("click", function() {
-            name = document.getElementById("log-description-textarea").value.split('.')[0]
+            name = localStorage.getItem("activeStreak")
             description = document.getElementById("log-description-textarea").value
             CreateLog(user, name, description);
           });
