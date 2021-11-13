@@ -1,76 +1,91 @@
 
 body{
     display: grid;
-    grid-template-rows: 12% 80% 5%;
+    grid-template-rows: 7% 93%;
     height: 100vh;
     background-color: black;
 }
 
 .profile-container {
     display: grid;
-    width: 100vw;
+    grid-template-rows: 55% 45%;
     background: #FDE74C;
-    grid-template-columns: 10% 65% 25%;
     grid-row: 2;
 }
 
-.sidebar-section {
-    display: grid;
-    grid-column: 3;
-    padding: 10%;
-    grid-template-rows: 25% 25% 25% 25%;
-    font-size: auto;
-    gap: 1%;
-    font-size: 35px;
-    color: white;
+.top-section {
 
+}
+
+.profile-img {
+    display: block;
+    height: 25%;
+}
+
+#profile-picture-circle {
+    background-color: rgb(255, 255, 255);
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin-top: 5%;
+    margin-left: 30%;
+}
+
+#profile-picture-image{
+    background-color: rgb(255, 255, 255);
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+
+#profile-name{
+    text-align: center;
+    font-size: 200%;
+}
+
+.profile-info {
+    display: block;
+    grid-column: 2;
+}
+
+.sidebar-section {
+    grid-row: 2;
+    color: white;
 }
 
 .profile-section{
     display: grid;
 }
 
-.friends-button {
-    display: flex;
+.sidebar-button {
+    margin-top: 4%;
     background-color: #211A1E;
-    grid-row: 1;
-    justify-content: center;
-    align-items: center;
-    border-radius: 15px;
+    margin-left: 5%;
+    width: 90%;
 }
 
-.streaks-button {
-    display: flex;
-    background-color: #211A1E;
-    grid-row: 2;
-    justify-content: center;
-    align-items: center;
-    border-radius: 15px;
-}
-
-.achievement-button {
-    display: flex;
-    background-color: #211A1E;
-    grid-row: 3;
-    justify-content: center;
-    align-items: center;
-    border-radius: 15px;
-}
-
-.active-challenges-button {
-    display: flex;
-    background-color: #211A1E;
-    grid-row: 4;
+#friends-button {
     text-align: center;
-    justify-content: center;
-    align-items: center;
-    border-radius: 15px;
+    border-radius: 10px;
+    font-size: 45px;
 }
 
+#streaks-button {
+    text-align: center;
+    border-radius: 10px;
+    font-size: 45px;
+}
 
-.profile-img {
-    display: block;
-    height: 25%;
+#achievement-button {
+    text-align: center;
+    border-radius: 10px;
+    font-size: 45px;
+}
+
+#active-challenges-button {
+    text-align: center;
+    border-radius: 10px;
+    font-size: 42px;
 }
 
 .text-box {
@@ -78,24 +93,8 @@ body{
     height: 500px;
 }
 
-.arrow-icon{
-    color: #211A1E;
-    margin-left: 50%;
-    margin-top: 50%;
-}
-
-.profile-picture {
-    background-color: rgb(255, 255, 255);
-    grid-column: 2;
-    height: 150px;
-    width: 150px;
-    border-radius: 50%;
-    justify-self: center;
-    margin-top: 2%;
-}
-
-.profile-info {
-    display: block;
-    grid-column: 2;
-    justify-self: center;
+#description-input{
+    margin-top: 5%;
+    width: 100%;
+    height: 20vh;
 }
