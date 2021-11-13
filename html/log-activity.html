@@ -91,13 +91,14 @@
 
       <script src="../scripts/AddLog.js"></script>
       <script>
+        document.getElementById("activity-name").innerHTML = localStorage.getItem("activeStreak");
         firebase.auth().onAuthStateChanged((user) => {
         if (user) {
           // User logged in already or has just logged in.
           console.log(user.uid);
-          PopulateLogs(user);
+          PopulateLogs(user, localStorage.getItem("activeStreak"));
           document.getElementById("done-button").addEventListener("click", function() {
-            name = document.getElementById("log-description-textarea").value.split('.')[0]
+            name = localStorage.getItem("activeStreak")
             description = document.getElementById("log-description-textarea").value
             CreateLog(user, name, description);
           });

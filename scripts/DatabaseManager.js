@@ -32,3 +32,7 @@ function NewUser(user){
         }
     })
 }
+
+function setActiveStreak(id){
+    localStorage.setItem('activeStreak', id);
+}
