@@ -1,7 +1,10 @@
 function CreateLog(user, name, description){
-    let Logs = {}
-    Logs[name] = {
+    let Skills = {}
+    +new Date
+    let timestamp = Date.now
+    Skills[name][iterations][log] = {
         description: description,
+        timestamp: timestamp
     }
     console.log(Logs)
     db.collection("users").doc(user.uid).set({
