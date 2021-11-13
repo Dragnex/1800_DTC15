@@ -28,9 +28,10 @@ function PopulateLogs(user, skillName){
         for (let key in sortedKeys){
             htmlObject = document.createElement('div')
             htmlObject.setAttribute("class", "list-group-item")
-            let date = new Date(parseInt(sortedKeys[key])).toLocaleDateString("en-US")
-            let time = new Date(parseInt(sortedKeys[key])).toLocaleTimeString("en-US")
-            currentSkill = skillTemplate.replace("TITLE", (date + " " + time + " " + userData.data()["Skills"][skillName]["iterations"][sortedKeys[key]]["description"]))
+            let date = '<span class="streakDate">' + new Date(parseInt(sortedKeys[key])).toLocaleDateString("en-US") + '</span>'
+            let time = '<span class="streakTime">' + new Date(parseInt(sortedKeys[key])).toLocaleTimeString("en-US") + '</span>'
+            let description = '<span class="streakDescription">' + userData.data()["Skills"][skillName]["iterations"][sortedKeys[key]]["description"] + '</span>'
+            currentSkill = skillTemplate.replace("TITLE", (description + " " + date.toString() + " " + time.toString()))
 
             htmlObject.innerHTML = currentSkill
             document.getElementById("activity-history").appendChild(htmlObject)
