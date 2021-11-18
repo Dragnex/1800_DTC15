@@ -57,7 +57,7 @@
 
         <div id="firebaseui-auth-container"></div>
 
-        <script src="./scripts/DatabaseManager.js"></script>
+        <script src="../scripts/DatabaseManager.js"></script>
         <script>
             // Initialize the FirebaseUI Widget using Firebase.
             var ui = new firebaseui.auth.AuthUI(firebase.auth());
@@ -77,7 +77,7 @@
                                 //       test: "test"
                                 //     }
                                 NewUser(user).then(function(){
-                                    window.location.assign("html/main.html");
+                                    window.location.assign("../html/main.html");
                                 })
                                 .catch(function(e){
                                     console.error("Error: " + e);

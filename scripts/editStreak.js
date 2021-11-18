@@ -52,3 +52,7 @@ function saveSkillInfo(user, skillName) {
         console.log("Document successfully updated!");
     })
 }
+
+function deleteStreak(user, skillName){
+    
+}
