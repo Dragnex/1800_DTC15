@@ -1,27 +1,16 @@
-body{
-    display: grid;
-    grid-template-rows: 7% 93%;
-    height: 100vh;
-    background-color: #FDE74C;
+#content {
+    display: block;
+    justify-content: center;
 }
 
-ul li {
-    background-color: #211A1E;
-    width: 300px;
+h1 {
     text-align: center;
-    font-size: 50px;
-    color: white;
-  }
+}
 
 ul {
-    padding-left: 0;
-
+    margin: 10%;
 }
 
-#friends-list {
-    justify-self: center;
-    grid-row: 2;
+li {
+    color: white;
 }
-
-
-
