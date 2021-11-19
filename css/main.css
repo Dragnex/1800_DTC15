@@ -2,41 +2,12 @@ body {
     background: #FDE74C;
     width: 100vw;
     height: 100vh;
-    display: grid;
-    grid-template-rows: 7% 86% 7%;
-    padding-top: 10%;
 }
 
-/* .color-block {
-    display: grid;
-    grid-column: 2;
-    grid-row: 1 / 4;
-    grid-template-columns: 25% 25% 25% 25%;
+#content {
+    text-align:center;
+    padding-top: 15%;
 }
-
-.color-block-orange {
-    display: block;
-    background: #E4572E;
-    grid-column: 1;
-}
-
-.color-block-blue {
-    display: block;
-    background: #5BC0EB;
-    grid-column: 2;
-}
-
-.color-block-green {
-    display: block;
-    background: #9BC53D;
-    grid-column: 3;
-}
-
-.color-block-red {
-    display: block;
-    background: #C3423F;
-    grid-column: 4;
-} */
 
 #list-of-streaks {
     display: grid;
@@ -48,10 +19,6 @@ body {
     /* padding-top: 10%;
     padding-bottom: 20%; */
 }
-
-/* ul {
-    padding: 0;
-} */
 
 .list-group-item {
     display: grid;
@@ -86,3 +53,4 @@ body {
 .streak-title {
     justify-self: start;
 }
+

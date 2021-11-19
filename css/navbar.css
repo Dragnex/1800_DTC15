@@ -1,6 +1,11 @@
+body {
+    background-color: #FDE74C;
+}
+
 nav {
     background-color: #211A1E;
     color: white;
+    display: block;
 }
 
 .navbar-top {
@@ -9,11 +14,10 @@ nav {
     padding-left: 2%;
 }
 
-.color-block-nav {
-    display: grid;
-    background: white;
-    grid-column: 4;
-}
+/* .collapse {
+    padding-top: 15%;
+} */
+
 
 .navbar-toggler {
     width: 3em;
@@ -26,14 +30,15 @@ nav {
     width: 100%;
 }
 
-
-.footer {
-    display: grid;
-    grid-template-columns: 33% 34% 33%;
-    width: 100vw;
-    justify-items: center;
+a {
+    text-decoration: none;
+    color: white;
 }
 
-.footer-icon {
-    color: white;
+.current-page {
+    background-color: rgb(71, 71, 71);
+}
+
+.nav-links {
+    width: 100%;
 }
