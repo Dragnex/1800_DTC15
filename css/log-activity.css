@@ -1,10 +1,3 @@
-body {
-    background-color: #FDE74C;
-}
-
-#content {
-    padding-top: 15%;
-}
 
 #top-button-bar {
     display: flex;
@@ -13,7 +6,5 @@ body {
 }
 
 #activity-log {
-    margin: 15%;
-    overflow: scroll;
-    margin-bottom: 20%;
+    margin: 10%;
 }
