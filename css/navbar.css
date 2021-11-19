@@ -26,14 +26,19 @@ nav {
     width: 100%;
 }
 
-
-.footer {
-    display: grid;
-    grid-template-columns: 33% 34% 33%;
-    width: 100vw;
-    justify-items: center;
+.collapse {
+    padding-top: 15%;
 }
 
-.footer-icon {
+a {
+    text-decoration: none;
     color: white;
+}
+
+.current-page {
+    background-color: rgb(71, 71, 71);
+}
+
+.nav-links {
+    width: 100%;
 }
