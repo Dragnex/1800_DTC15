@@ -17,7 +17,7 @@ function CreateSkill(user, name, description, eachInterval, perInterval){
 }
 
 async function NewUser(user){
-    db.collection("users").doc(user.uid).set({
+    await db.collection("users").doc(user.uid).set({
         name: user.displayName,
         email: user.email,
         Skills: {
