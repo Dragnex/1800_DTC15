@@ -16,7 +16,7 @@ function CreateSkill(user, name, description, eachInterval, perInterval){
     })
 }
 
-function NewUser(user){
+async function NewUser(user){
     db.collection("users").doc(user.uid).set({
         name: user.displayName,
         email: user.email,
@@ -31,4 +31,8 @@ function NewUser(user){
             }
         }
     })
+}
+
+function setActiveStreak(id){
+    localStorage.setItem('activeStreak', id);
 }

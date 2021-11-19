@@ -19,7 +19,17 @@
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+
     <title>SkillStreaks - Edit Activity Streak</title>
+    <script src="../scripts/FirebaseData.js"></script>
   </head>
   <body>
     <div class="pos-f-t">
@@ -46,13 +56,9 @@
         <button type="button" id="delete-streak-button" class="btn btn-danger">Delete Streak</button>
       </div>
       <div class="container">
-              <h1>Edit {activity streak name here}</h1>
+              <h1 id="activity-name">Edit {activity streak name here}</h1>
               <form>
                   <fieldset class="mb-3" id="personalInfoFields">
-                      <div class="form-group">
-                          <label>Title</label>
-                          <input type="text" id="titleInput" class="form-control" placeholder="Enter a title">
-                      </div>
                       <div class="form-group">
                         <label>Description</label>
                         <input type="text" id="descriptionInput" class="form-control" placeholder="Enter a description">
@@ -73,12 +79,30 @@
                   </fieldset>
                   <div class="d-flex justify-content-center mt-5">
                       <span style="width: 10px"></span>
-                      <button type="button" class="btn btn-dark">Save</button>
+                      <button type="button" class="btn btn-dark" id="save">Save</button>
                   </div>
               </form>
       </div>
 
     </section>
+    <script src="../scripts/editStreak.js"></script>
+    <script src="../scripts/DatabaseManager.js"></script>
+    <script>
+      skillname = localStorage.getItem("activeStreak")
+      document.getElementById("activity-name").innerHTML = skillname;
+      console.log(localStorage.getItem("activeStreak"))
+      firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        // User logged in already or has just logged in.
+        console.log(user.uid);
+        document.getElementById("save").addEventListener("click", function() {
+          saveSkillInfo(user, skillname)
+        });
+      } else {
+        console.log("User is not logged in.")
+      }
+    });
+    </script>
 
       <!-- Option 1: Bootstrap Bundle with Popper -->
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
