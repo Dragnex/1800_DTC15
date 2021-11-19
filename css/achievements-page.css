@@ -1,0 +1,73 @@
+body {
+    display: grid;
+    background-color: #FDE74C;
+    grid-template-rows: 7% 93%;
+    height: 100vh;
+}
+
+.content {
+    display: grid;
+    grid-row: 2;
+    height: 93vh;
+    grid-template-rows: 15% 5% 80%;
+}
+
+.top-achievements-section {
+    grid-row: 1;
+}
+
+#profile-picture-image {
+    height: 20vh;
+    width: 20vw;
+    object-fit: contain;
+    clip-path: circle();
+    background-color: white;
+    margin-right: 100vw;
+    position: absolute;
+    left: 10vw;
+    top: 4vh;
+}
+
+#achievements-title {
+    font-size: 25px;
+    margin-left: 5vw;
+    color: white;
+    background-color: #211A1E;
+    text-align: center;
+    width: 45vw;
+    height: 5vh;
+}
+
+#profile-name {
+    font-size: 3vh;
+    position: absolute;
+    right: 5vw;
+    top: 11.5vh;
+}
+
+.bottom-achievements-section {
+
+    grid-row: 3;
+    font-size: 30px;
+    justify-self: center;
+    height: 72vh;
+}
+
+ul{
+    background-color: #211A1E;
+    height: 72vh;
+    padding-left: 0;
+    text-align: center;
+}
+
+#achievements-section {
+    width: 90vw;
+}
+
+li {
+    display: inline-block;
+    height: 30vh;
+    width: 80vw;
+    background-color: white;
+    margin-bottom: 10px;
+}
