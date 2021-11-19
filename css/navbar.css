@@ -1,6 +1,11 @@
+body {
+    background-color: #FDE74C;
+}
+
 nav {
     background-color: #211A1E;
     color: white;
+    display: block;
 }
 
 .navbar-top {
@@ -9,11 +14,10 @@ nav {
     padding-left: 2%;
 }
 
-.color-block-nav {
-    display: grid;
-    background: white;
-    grid-column: 4;
-}
+/* .collapse {
+    padding-top: 15%;
+} */
+
 
 .navbar-toggler {
     width: 3em;
@@ -24,10 +28,6 @@ nav {
     grid-column: 3;
     height: auto;
     width: 100%;
-}
-
-.collapse {
-    padding-top: 15%;
 }
 
 a {
