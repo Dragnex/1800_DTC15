@@ -1,17 +1,27 @@
 body{
     display: grid;
-    grid-template-rows: 13% 79% 5%;
+    grid-template-rows: 7% 93%;
     height: 100vh;
     background-color: #FDE74C;
 }
 
-ul li div  {
-    width: 100%;
-    height: 100%;
+ul li {
     background-color: #211A1E;
-    width: 400px;
+    width: 300px;
     text-align: center;
     font-size: 50px;
     color: white;
   }
+
+ul {
+    padding-left: 0;
+
+}
+
+#friends-list {
+    justify-self: center;
+    grid-row: 2;
+}
+
+
 
