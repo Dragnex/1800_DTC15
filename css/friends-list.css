@@ -1,17 +1,16 @@
-body{
-    display: grid;
-    grid-template-rows: 13% 79% 5%;
-    height: 100vh;
-    background-color: #FDE74C;
+#content {
+    display: block;
+    justify-content: center;
 }
 
-ul li div  {
-    width: 100%;
-    height: 100%;
-    background-color: #211A1E;
-    width: 400px;
+h1 {
     text-align: center;
-    font-size: 50px;
-    color: white;
-  }
+}
 
+ul {
+    margin: 10%;
+}
+
+li {
+    color: white;
+}
