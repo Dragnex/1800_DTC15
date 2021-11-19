@@ -1,13 +1,6 @@
-body {
-    background-color: #FDE74C;
-}
 
 #top-button-bar {
     display: flex;
     justify-content: end;
     padding: 5%;
-}
-
-#content {
-    padding-top: 15%;
 }
