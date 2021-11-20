@@ -1,0 +1,24 @@
+#profile-picture-image {
+    display: block;
+    clip-path: circle(50%);
+    margin: auto;
+    width: 50%;
+    margin-top: 10%;
+}
+
+h1 {
+    text-align: center;
+}
+
+.sidebar-button {
+    display: block;
+    margin: 10%;
+    width: 80%;
+    font-size: 200%;
+}
+
+#top-button-bar {
+    display: block;
+    margin-left: 75%;
+    margin-top: 7%;
+}
