@@ -59,6 +59,12 @@
 
         <script src="../scripts/DatabaseManager.js"></script>
         <script>
+          firebase.auth().onAuthStateChanged((user) => {
+              if (user) {
+                logout(user);
+                // User logged in already or has just logged in.
+              }
+            });
             // Initialize the FirebaseUI Widget using Firebase.
             var ui = new firebaseui.auth.AuthUI(firebase.auth());
             var uiConfig = {
