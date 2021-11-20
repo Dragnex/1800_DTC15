@@ -1,9 +1,8 @@
-function CreateSkill(user, name, description, eachInterval, perInterval){
+function CreateSkill(user, name, description, eachInterval){
     let Skills = {}
     Skills[name] = {
         description: description,
-        interval: eachInterval,
-        perInterval: perInterval,
+        eachInterval: eachInterval,
         iterations: {
 
         }
