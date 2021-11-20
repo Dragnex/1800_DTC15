@@ -81,6 +81,11 @@
           -->
         </table>
 
+          <template id="streakTemplate">
+            <input type="button" value="VALUE" class="streak-count"/><h4 class="streak-title" onClick="RedirectStreakDetails(this.innerHTML)">TITLE</h4>
+          </template>
+
+
         <div id="no-streaks-notice">
           <h3>Whoops, you haven't started any streaks! <a href="./add-streak">Get Started</a></h3>
         </div>
@@ -94,7 +99,8 @@
         if (user) {
           // User logged in already or has just logged in.
           console.log(user.uid);
-          PopulateSkills(user);
+          let template = document.getElementById('streakTemplate').innerHTML;
+          PopulateSkills(user, template);
           insertName();
         } else {
           console.log("User is not logged in.")
