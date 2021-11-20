@@ -59,6 +59,16 @@
 
         <script src="../scripts/DatabaseManager.js"></script>
         <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            console.log("Page loaded");
+              firebase.auth().onAuthStateChanged((user) => {
+                if (user) {
+                  alert("Logging out");
+                  logout(user);
+                  // User logged in already or has just logged in.
+                }
+              }, setTimeout(resolve, 1000));
+            }, false)
             // Initialize the FirebaseUI Widget using Firebase.
             var ui = new firebaseui.auth.AuthUI(firebase.auth());
             var uiConfig = {
@@ -76,7 +86,7 @@
                                 //     Skills: {
                                 //       test: "test"
                                 //     }
-                                NewUser(user).then(function(){
+                                NewUser(user).then(async function(){
                                     window.location.assign("../html/main.html");
                                 })
                                 .catch(function(e){

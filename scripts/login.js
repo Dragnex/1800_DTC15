@@ -18,6 +18,13 @@ function sayHello() {
     });
 }
 
+function logout(user) {
+    firebase.auth().signOut().then(() => {
+        console.log('user signed out');
+        window.location.assign('../html/login.html')
+    })
+}
+
 // function writeWebcamData() {
 //     //this is an array of JSON objects copied from open source data
 //     var webcams = [{

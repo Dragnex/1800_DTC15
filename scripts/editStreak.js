@@ -53,6 +53,12 @@ function saveSkillInfo(user, skillName) {
     })
 }
 
-function deleteStreak(user, skillName){
-    
+async function deleteStreak(user, skillName){
+    let userDoc = db.collection("users").doc(user.uid);
+    let deleteJSON = {Skills: {}}
+    deleteJSON["Skills"][skillName] = firebase.firestore.FieldValue.delete()
+
+    console.log(userDoc[deleteJSON], deleteJSON)
+    await userDoc.set(deleteJSON, {merge: true})
+    //alert("Deleted Successfully")
 }
