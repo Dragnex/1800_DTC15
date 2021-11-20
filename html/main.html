@@ -54,7 +54,21 @@
 
     <section id="content">
       <h1>Welcome <span id="name-goes-here"></span></h1>
-        <ul id="list-of-streaks" class="list-group">
+        <table id="table-of-streaks" class="table">
+          <thead>
+            <tr>
+              <th>Length</th>
+              <th>Frequency</th>
+              <th>Title</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>23</td>
+              <td>Days</td>
+              <td>{Streak Title}</td>
+            </tr>
+          </tbody>
           <!--
             <li class="list-group-item"><input type="button" value="3 days" class="streak-count" /><h4 class="streak-title">German lesson</h4></li>
             <li class="list-group-item"><input type="button" value="4 weeks" class="streak-count" /><h4 class="streak-title">Piano practice</h4></li>
@@ -65,7 +79,7 @@
             <li class="list-group-item"><input type="button" value="1 day" class="streak-count" /><h4 class="streak-title">Cook a new recipe</h4></li>
             <li class="list-group-item"><input type="button" value="1 day" class="streak-count" /><h4 class="streak-title">Cook a new recipe</h4></li>
           -->
-        </ul>
+        </table>
 
         <div id="no-streaks-notice">
           <h3>Whoops, you haven't started any streaks! <a href="./add-streak">Get Started</a></h3>
