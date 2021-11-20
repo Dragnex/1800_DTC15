@@ -5,6 +5,8 @@
 
 h1 {
     text-align: center;
+    font-size: 250%;
+    margin-top: 10%;
 }
 
 ul {
@@ -13,4 +15,6 @@ ul {
 
 li {
     color: white;
+    margin: 3% 0;
+    font-size: 150%;
 }
