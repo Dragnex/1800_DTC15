@@ -48,3 +48,6 @@ body {
     justify-self: start;
 }
 
+.clickable-row {
+    cursor: pointer;
+}

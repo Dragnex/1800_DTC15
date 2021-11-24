@@ -62,12 +62,8 @@
               <th>Title</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>23</td>
-              <td>Days</td>
-              <td>{Streak Title}</td>
-            </tr>
+          <tbody id="streak-list">
+            
           </tbody>
           <!--
             <li class="list-group-item"><input type="button" value="3 days" class="streak-count" /><h4 class="streak-title">German lesson</h4></li>
@@ -82,7 +78,11 @@
         </table>
 
           <template id="streakTemplate">
-            <input type="button" value="VALUE" class="streak-count"/><h4 class="streak-title" onclick="RedirectStreakDetails(this.innerHTML)">TITLE</h4>
+            <tr onclick="RedirectStreakDetails('TITLE')" class="clickable-row">
+              <td>AMOUNT</td>
+              <td>FREQUENCY</td>
+              <td>TITLE</td>
+            </tr>
           </template>
 
 
