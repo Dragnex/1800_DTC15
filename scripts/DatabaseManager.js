@@ -32,6 +32,7 @@ async function NewUser(user){
     })
 }
 
-function setActiveStreak(id){
+function setActiveStreak(id, id2){
     localStorage.setItem('activeStreak', id);
+    localStorage.setItem('frequency', id2);
 }

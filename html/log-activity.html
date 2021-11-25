@@ -57,7 +57,7 @@
         <div class="container">
           <h2 id="activity-name">Practice German</h2>
 
-          <p>This is a {frequency} task</p>
+          <p>This is a <span id="frequency">{frequency}</span> task</p>
 
           <form>
             <fieldset class="mb-3">
@@ -87,6 +87,8 @@
       <script src="../scripts/AddLog.js"></script>
       <script>
         document.getElementById("activity-name").innerHTML = localStorage.getItem("activeStreak");
+        console.log(localStorage.getItem("frequency"));
+        document.getElementById("frequency").innerHTML = localStorage.getItem("frequency");
         firebase.auth().onAuthStateChanged((user) => {
         if (user) {
           // User logged in already or has just logged in.
