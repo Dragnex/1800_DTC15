@@ -62,9 +62,9 @@
               <th>Title</th>
             </tr>
           </thead>
-          <tbody id="streak-list">
+          <!-- <tbody id="streak-list">
             
-          </tbody>
+          </tbody> -->
           <!--
             <li class="list-group-item"><input type="button" value="3 days" class="streak-count" /><h4 class="streak-title">German lesson</h4></li>
             <li class="list-group-item"><input type="button" value="4 weeks" class="streak-count" /><h4 class="streak-title">Piano practice</h4></li>
@@ -76,6 +76,8 @@
             <li class="list-group-item"><input type="button" value="1 day" class="streak-count" /><h4 class="streak-title">Cook a new recipe</h4></li>
           -->
         </table>
+        <br>
+        <button id="add-new-streak" onclick="location.href = './add-streak.html'">Add a new streak.</button>
 
           <template id="streakTemplate">
             <tr onclick="RedirectStreakDetails('TITLE')" class="clickable-row">
