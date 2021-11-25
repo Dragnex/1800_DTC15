@@ -2,14 +2,24 @@ function PopulateSkills(user, template){
     let skillTemplate = template;
     let finalSkills = db.collection("users").doc(user.uid).get().then(userData => {
         console.log(userData.data())
+        let timestamp = new Date().getTime();
         for (let [key, value] of Object.entries(userData.data()["Skills"])){
-            console.log(key, value)
-            htmlObject = document.createElement('div')
-            htmlObject.setAttribute("class", "list-group-item")
-            interval = value["perInterval"] + " " + value["interval"]
-            currentSkill = skillTemplate.replace("VALUE", interval).replace("TITLE", key)
-            htmlObject.innerHTML = currentSkill
-            document.getElementById("list-of-streaks").appendChild(htmlObject)
+            //htmlObject = document.createElement('div');
+            //htmlObject.setAttribute("class", "list-group-item");
+            interval = value["interval"];
+            let logs = userData.data()["Skills"][key]["iterations"];
+            let intervalObj = {"weekly": 604800000, "monthly": 2419000000, "daily": 86400000}
+            let done = 0;
+            for (let [objKey, objValue] of Object.entries(logs)) {
+                console.log(timestamp, parseInt(objKey));
+                if (timestamp - parseInt(objKey) < intervalObj[value["interval"]]){
+                    done++;
+                }
+            }
+            currentSkill = skillTemplate.replaceAll("FREQUENCY", interval).replaceAll("TITLE", key).replaceAll("AMOUNT", done);
+            document.getElementById("table-of-streaks").innerHTML += currentSkill;
+            //htmlObject.innerHTML = currentSkill;
+            //document.getElementById("list-of-streaks").appendChild(htmlObject);
         }
     })
     return finalSkills
