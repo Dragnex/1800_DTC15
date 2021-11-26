@@ -44,7 +44,6 @@
           <h5 class="text-white nav-link"><a href="./profile.html">Profile</a></h5>
           <h5 class="text-white nav-link"><a href="./friends-list.html">Friends</a></h5>
           <h5 class="text-white nav-link"><a href="./add-streak.html">Add Activity Streak</a></h5>
-          <h5 class="text-white nav-link"><a href="./log-activity.html">Log Activity</a></h5>
           <h5 class="text-white nav-link"><a href="./login.html">Log Out</a></h5>
         </div>
       </div>
@@ -57,27 +56,17 @@
         <table id="table-of-streaks" class="table">
           <thead>
             <tr>
-              <th>Length</th>
+              <th>Streak</th>
               <th>Frequency</th>
               <th>Title</th>
             </tr>
           </thead>
           <!-- <tbody id="streak-list">
-            
+
           </tbody> -->
-          <!--
-            <li class="list-group-item"><input type="button" value="3 days" class="streak-count" /><h4 class="streak-title">German lesson</h4></li>
-            <li class="list-group-item"><input type="button" value="4 weeks" class="streak-count" /><h4 class="streak-title">Piano practice</h4></li>
-            <li class="list-group-item"><input type="button" value="5 days" class="streak-count" /><h4 class="streak-title">Go for a jog</h4></li>
-            <li class="list-group-item"><input type="button" value="17 days" class="streak-count" /><h4 class="streak-title">Read a chapter of book</h4></li>
-            <li class="list-group-item"><input type="button" value="1 day" class="streak-count" /><h4 class="streak-title">Cook a new recipe</h4></li>
-            <li class="list-group-item"><input type="button" value="1 day" class="streak-count" /><h4 class="streak-title">Cook a new recipe</h4></li>
-            <li class="list-group-item"><input type="button" value="1 day" class="streak-count" /><h4 class="streak-title">Cook a new recipe</h4></li>
-            <li class="list-group-item"><input type="button" value="1 day" class="streak-count" /><h4 class="streak-title">Cook a new recipe</h4></li>
-          -->
         </table>
         <br>
-        <button id="add-new-streak" onclick="location.href = './add-streak.html'">Add a new streak.</button>
+        <button id="add-new-streak" class="btn btn-dark" onclick="location.href = './add-streak.html'">Add A New Activity</button>
 
           <template id="streakTemplate">
             <tr onclick="RedirectStreakDetails('TITLE', 'FREQUENCY')" class="clickable-row">
