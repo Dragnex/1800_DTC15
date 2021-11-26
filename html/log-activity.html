@@ -57,9 +57,9 @@
         <div class="container">
           <h2 id="activity-name">Practice German</h2>
 
-          <p>This is a {frequency} task</p>
+          <p>This is a <span id="frequency">{frequency}</span> task</p>
 
-          <form>
+          <form id="form">
             <fieldset class="mb-3">
               <div class="form-group">
                 <label>Describe what you accomplished:</label>
@@ -67,7 +67,7 @@
               </div>
             </fieldset>
             <div class="d-flex justify-content-center mt-5">
-              <input id="done-button" type="button" value="Done" class="btn btn-dark"/>
+              <input id="done-button" type="submit" value="Done" class="btn btn-dark"/>
             </div>
           </form>
         </div>
@@ -87,15 +87,18 @@
       <script src="../scripts/AddLog.js"></script>
       <script>
         document.getElementById("activity-name").innerHTML = localStorage.getItem("activeStreak");
+        console.log(localStorage.getItem("frequency"));
+        document.getElementById("frequency").innerHTML = localStorage.getItem("frequency");
         firebase.auth().onAuthStateChanged((user) => {
         if (user) {
           // User logged in already or has just logged in.
           console.log(user.uid);
           PopulateLogs(user, localStorage.getItem("activeStreak"));
-          document.getElementById("done-button").addEventListener("click", function() {
+          document.getElementById("form").addEventListener("submit", function() {
             name = localStorage.getItem("activeStreak")
             description = document.getElementById("log-description-textarea").value
             CreateLog(user, name, description);
+            event.preventDefault()
           });
         } else {
           console.log("User is not logged in.")

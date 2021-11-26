@@ -50,8 +50,8 @@ function insertName() {
 }
 
 
-function RedirectStreakDetails(id){
-    console.log("AAAAAAAAAAA" + id);
-    setActiveStreak(id);
+function RedirectStreakDetails(id, id2){
+    console.log(id, id2);
+    setActiveStreak(id, id2);
     window.location.assign("log-activity.html");
 }
