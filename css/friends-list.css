@@ -8,8 +8,7 @@ h1 {
     justify-content: center;
     font-size: 250%;
     margin-top: 10%;
-    background-color: #211A1E;
-    color: white;
+    color: black;
     width: 80%;
     height: 7vh;
     margin-left: auto;
@@ -17,7 +16,8 @@ h1 {
 }
 
 ul {
-    margin: 10%;
+    margin-left: 10%;
+    width: 80%;
 }
 
 li {
