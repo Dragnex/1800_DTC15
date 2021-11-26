@@ -65,7 +65,7 @@ body {
     cursor: pointer;
 }
 
-#add-new-streak {
+/* #add-new-streak {
     border-width: 3px;
     border-radius: 25px;
     background-color: #ffed62;
@@ -75,4 +75,4 @@ body {
 
 #add-new-strea:active {
     background-color: #ffe626;
-}
+} */
