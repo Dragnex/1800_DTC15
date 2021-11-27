@@ -21,17 +21,27 @@ function CreateLog(user, name, description){
 
 function PopulateLogs(user, skillName){
     let logList = db.collection("users").doc(user.uid).get().then(userData => {
-        let skillTemplate = '<li class="streak-title">TITLE</li>'
+        let skillTemplate = '<tr class="streak-title">TITLE</tr>'
         console.log(userData.data())
         sortedKeys = GetSortedObjectKeys(userData.data()["Skills"][skillName]["iterations"])
         console.log(sortedKeys)
         for (let key in sortedKeys){
-            htmlObject = document.createElement('div')
-            htmlObject.setAttribute("class", "list-group-item")
-            let date = '<span class="streakDate">' + new Date(parseInt(sortedKeys[key])).toLocaleDateString("en-US") + '</span>'
-            let time = '<span class="streakTime">' + new Date(parseInt(sortedKeys[key])).toLocaleTimeString("en-US") + '</span>'
-            let description = '<span class="streakDescription">' + userData.data()["Skills"][skillName]["iterations"][sortedKeys[key]]["description"] + '</span>'
-            currentSkill = skillTemplate.replace("TITLE", (description + " " + date.toString() + " " + time.toString()))
+            htmlObject = document.createElement('tr')
+            // htmlObject.setAttribute("class", "list-group-item")
+            let date = new Date(parseInt(sortedKeys[key])).toLocaleDateString("en-US")
+            let today = new Date(new Date().getTime()).toLocaleDateString("en-US");
+            let displayDate;
+            if (date == today) {
+                displayDate = "Today";
+            } else {
+                displayDate = date;
+            }
+            let displayTime = '<td class="streakTime">' + new Date(parseInt(sortedKeys[key])).toLocaleTimeString("en-US") + '</td>'
+            console.log(displayTime)
+            let dateWrapper = '<td class="streakDate">' + displayDate + '</td>'
+            // let time = '<td class="streakTime">' + new Date(parseInt(sortedKeys[key])).toLocaleTimeString("en-US") + '</td>'
+            let description = '<td class="streakDescription">' + userData.data()["Skills"][skillName]["iterations"][sortedKeys[key]]["description"] + '</td>'
+            currentSkill = skillTemplate.replace("TITLE", (description + dateWrapper + displayTime))
 
             htmlObject.innerHTML = currentSkill
             document.getElementById("activity-history").appendChild(htmlObject)
