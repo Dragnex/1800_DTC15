@@ -35,6 +35,10 @@ a {
     color: white;
 }
 
+#logo-button {
+    grid-column: 3;
+}
+
 .current-page {
     background-color: rgb(71, 71, 71);
 }
