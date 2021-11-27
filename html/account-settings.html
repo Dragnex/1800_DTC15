@@ -133,8 +133,9 @@
               })
               if (newemail !== user.email) {
                 console.log(newemail, user.email)
-                user.updateEmail(newemail).then(window.location.assign("./login.html"))
+                user.updateEmail(newemail)
               }
+              window.location.assign("./profile.html")
             })
             document.getElementById("passwordInput").addEventListener("click", function () {
               email = document.getElementById("emailInput").value 
