@@ -8,3 +8,8 @@
 #activity-log {
     margin: 10%;
 }
+
+#table-log-of-activities {
+    background-color: #fff18b;
+    border: 1px solid black;
+}
