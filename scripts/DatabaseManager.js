@@ -20,14 +20,7 @@ async function NewUser(user){
         name: user.displayName,
         email: user.email,
         Skills: {
-            dummySkill: {
-                description: "Dummy Skill",
-                interval: "Daily",
-                perInterval: "2",
-                iterations: {
-
-                }
-            }
+            
         }
     })
 }
