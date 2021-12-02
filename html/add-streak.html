@@ -91,7 +91,9 @@
             name = document.getElementById("log-activity-details").value.split('.')[0]
             description = document.getElementById("log-activity-details").value
             eachInterval = document.getElementById("frequency-selection").value
-            CreateSkill(user, name, description, eachInterval);
+            if (name != '' && description != ''){
+              CreateSkill(user, name, description, eachInterval);
+            }
           });
         } else {
           console.log("User is not logged in.")

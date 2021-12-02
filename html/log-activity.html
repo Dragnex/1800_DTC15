@@ -106,7 +106,9 @@
           document.getElementById("form").addEventListener("submit", function() {
             name = localStorage.getItem("activeStreak")
             description = document.getElementById("log-description-textarea").value
-            CreateLog(user, name, description);
+            if (description != ''){
+              CreateLog(user, name, description);
+            }
             event.preventDefault()
           });
         } else {
