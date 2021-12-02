@@ -1,8 +1,8 @@
 #profile-picture-image {
     display: block;
-    border-radius: 50%;
+    clip-path: circle(38% at 50% 50%);
     margin: auto;
-    width: 50%;
+    width: 40%;
 }
 
 h1, h6 {
