@@ -115,6 +115,13 @@
           console.log("User is not logged in.")
         }
       });
+
+      async function deleteLog(skillname, timestamp) {
+        firebase.auth().onAuthStateChanged(async (user) => {
+          await DeleteLog(user, skillname, timestamp)
+          location.reload();
+        })
+      }
       </script>
 
       <!-- Option 1: Bootstrap Bundle with Popper -->
