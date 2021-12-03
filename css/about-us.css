@@ -1,0 +1,12 @@
+body {
+    height: 100vh;
+    display: block;
+    align-content: center;
+    padding: 10%;
+}
+
+#content {
+    margin-top: 40%;
+    padding: 5%;
+    background-color: white;
+}
