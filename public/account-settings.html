@@ -1,40 +1,37 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <head>
-        <meta charset="utf-8">
-        <title>SkillStreaks - Profile</title>
-        <meta name="comp1800 boilerplate code" content="my bcit project">
-        <meta name="author" content="BCIT">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-        <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="./css/navbar.css" rel="stylesheet" />
 
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-        <link href="../css/navbar.css" rel="stylesheet" />
-        <link href="../css/profile.css" rel="stylesheet" />
+    <!--Firebase 8 CDNs-->
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
-            <!--Firebase 8 CDNs-->
-        <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
-        <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
-        </script>
-        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
-        <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+    <script src="./scripts/FirebaseData.js"></script>
 
-        <script src="../scripts/FirebaseData.js"></script>
-    </head>
-
-    <body>
-        <div class="pos-f-t">
+    <title>Starter Template Title</title>
+  </head>
+  <body>
+    <div class="pos-f-t">
       <nav class="navbar navbar-dark navbar-top">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -46,7 +43,7 @@
       <div class="collapse" id="navbarToggleExternalContent">
         <div class="bg-dark p-4">
           <h5 class="text-white nav-link"><a href="./main.html">Home</a></h5>
-          <h5 class="text-white nav-link current-page"><a href="./profile.html">Profile</a></h5>
+          <h5 class="text-white nav-link"><a href="./profile.html">Profile</a></h5>
           <h5 class="text-white nav-link"><a href="./friends-list.html">Friends</a></h5>
           <h5 class="text-white nav-link"><a href="./add-streak.html">Add A New Activity</a></h5>
           <h5 class="text-white nav-link"><a href="./log-activity.html">Log Activity</a></h5>
@@ -54,57 +51,109 @@
         </div>
       </div>
     </div>
-        <section id="content">
-          <div id="top-button-bar">
-            <input id="edit-button" class="btn btn-dark" type="button" value="Edit" onclick="window.location.href='account-settings.html'"/>
-          </div>
-          <div class="profile-container">
-            <div class="top-section">
-              <div id="profile-picture-circle">
-                <img src="/images/guy.jpg" id="profile-picture-image">
-              </div>
-              <div class="profile-info-header">
-                <h1 id="profile-name"><span id="name-goes-here">sample name</span></h1>
-                <h6 id="email-adress"><span id="email-goes-here">sample@email.com</span></h6>
-                <!-- <input id="description-input" type="text" placeholder="Describe yourself here."> -->
-              </div>
-            </div>
-          </div>
-          <div class="sidebar-section">
-            <a href="./friends-list.html"><button id="friends-button" class="sidebar-button btn btn-dark">Friends</button></a>
-          </div>
-          </section>
 
-      <script>
-        firebase.auth().onAuthStateChanged((user) => {
-          if (user) {
-            // User is signed in, see docs for a list of available properties
-            // https://firebase.google.com/docs/reference/js/firebase.User
-            // ...
-            const user = firebase.auth().currentUser;
-            if (user !== null) {
-              // The user object has basic properties such as display name, email, etc.
-              const displayName = user.displayName;
-              const email = user.email;
+    <section id="content">
+        <div class="container">
+            <h1>User Profile </h1>
+            <form>
+                <fieldset class="mb-3" id="personalInfoFields">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" id="nameInput" class="form-control" placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label>Profile Photo</label>
+                        <div id="photo"></div>
+                        <input type="file" id="photoInput" class="form-control-file" placeholder="Upload a photo">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="emailInput" class="form-control" placeholder="Enter a new email">
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <br/>
+                        <button type="button" class="btn btn-dark" id="passwordInput">Reset Password</button>
+                    </div>
+                </fieldset>
+                <div class="d-flex justify-content-end mt-5">
+                    <button type="button" class="btn btn-danger">Cancel</button>
+                    <span style="width: 10px"></span>
+                    <button type="button" class="btn btn-dark" id="save">Save</button>
+                </div>
+            </form>
+        </div>
 
-              // The user's ID, unique to the Firebase project. Do NOT use
-              // this value to authenticate with your backend server, if
-              // you have one. Use User.getToken() instead.
-              const uid = user.uid;
+    </section>
+    <script>
+      firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+          // User is signed in, see docs for a list of available properties
+          // https://firebase.google.com/docs/reference/js/firebase.User
+          // .
+          const user = firebase.auth().currentUser;
+          if (user !== null) {
+            // The user object has basic properties such as display name, email, etc.
+            const displayName = user.displayName;
+            const email = user.email;
+            const photoURL = user.photoURL;
+            const emailVerified = user.emailVerified;
 
-              if (displayName != null) {
-                document.getElementById("name-goes-here").innerHTML = displayName;
-              }
-              if (email != null) {
-                document.getElementById("email-goes-here").innerHTML = email;
-              }
+            // The user's ID, unique to the Firebase project. Do NOT use
+            // this value to authenticate with your backend server, if
+            // you have one. Use User.getToken() instead.
+            const uid = user.uid;
+            
+            if (displayName != null) {
+              document.getElementById("nameInput").value = displayName;
             }
-        }})
-      </script>
+            if (email != null) {
+              document.getElementById("emailInput").value = email;
+            }
+            if (photoURL != null) {
+              var img = document.createElement("img");
+              img.src = photoURL;
+              var src = document.getElementById("photo");
+              src.appendChild(img);
+            }
+          }
+          if (user !== null) {
+            user.providerData.forEach((profile) => {
+              console.log("Sign-in provider: " + profile.providerId);
+              console.log("  Provider-specific UID: " + profile.uid);
+              console.log("  Name: " + profile.displayName);
+              console.log("  Email: " + profile.email);
+              console.log("  Photo URL: " + profile.photoURL);
+            });
+            document.getElementById("save").addEventListener("click", function () {
+              displayname = document.getElementById("nameInput").value;
+              photo = document.getElementById("photoInput").value;
+              newemail = document.getElementById("emailInput").value
+              user.updateProfile({
+                displayName: displayname,
+                photoURL: photo
+              })
+              if (newemail !== user.email) {
+                console.log(newemail, user.email)
+                user.updateEmail(newemail)
+              }
+              window.location.assign("./profile.html")
+            })
+            document.getElementById("passwordInput").addEventListener("click", function () {
+              email = document.getElementById("emailInput").value 
+              firebase.auth().sendPasswordResetEmail(email)
+              })
+          }
+        } else {
+          // User is signed out
+          // .
+        }
+      });
+    </script>
 
+      <!-- Option 1: Bootstrap Bundle with Popper -->
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    </body>
-
+  </body>
 </html>

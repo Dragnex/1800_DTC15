@@ -1,38 +1,33 @@
 <!DOCTYPE html>
 
-<!-- I'd like this page to have:
-  - prefilled form fields with existing info from database
-  - title includes name of streak that is being edited
-  - delete streak should remove it from database **after** giving the user a warning -->
-
 <html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="./css/navbar.css" rel="stylesheet" />
+    <link href="./css/log-activity.css" rel="stylesheet" />
 
-  <link href="../css/navbar.css" rel="stylesheet" />
-  <link href="../css/edit-activity-streak.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
     </script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
-  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
-    <title>SkillStreaks - Edit Activity Streak</title>
-    <script src="../scripts/FirebaseData.js"></script>
+    <title>SkillStreaks - Log Activity</title>
+    <script src="./scripts/FirebaseData.js"></script>
   </head>
   <body>
     <div class="pos-f-t">
@@ -50,77 +45,88 @@
           <h5 class="text-white nav-link"><a href="./profile.html">Profile</a></h5>
           <h5 class="text-white nav-link"><a href="./friends-list.html">Friends</a></h5>
           <h5 class="text-white nav-link"><a href="./add-streak.html">Add A New Activity</a></h5>
-          <h5 class="text-white nav-link"><a href="./log-activity.html">Log Activity</a></h5>
+          <h5 class="text-white nav-link current-page"><a href="./log-activity.html">Log Activity</a></h5>
           <h5 class="text-white nav-link"><a href="./login.html">Log Out</a></h5>
         </div>
       </div>
     </div>
-  <!-- </div> -->
 
-  <section id="content">
-    <div id="top-button-bar">
-      <button type="button" id="delete-streak-button" class="btn btn-danger">Delete Streak</button>
-    </div>
-    <div class="container">
-      <h1 id="activity-name">Edit {activity streak name here}</h1>
-      <form>
-        <fieldset class="mb-3" id="personalInfoFields">
-          <div class="form-group">
-            <label>Description</label>
-            <input type="text" id="descriptionInput" class="form-control" placeholder="Enter a description">
-          </div>
-          <div class="form-group">
-            <label>How often will you do this?</label>
-            <select type="select" id="frequencySelect" class="form-select">
-              <option>Daily</option>
-              <option>Weekly</option>
-              <option>Monthly</option>
-            </select>
-          </div>
-        </fieldset>
-        <div class="d-flex justify-content-center mt-5">
-          <span style="width: 10px"></span>
-          <button type="button" class="btn btn-dark" id="save">Save</button>
+    <section id="content">
+        <div id="top-button-bar">
+            <input id="edit-button" class="btn btn-dark" type="button" value="Edit" onclick="window.location.href='edit-activity-streak.html'"/>
         </div>
-      </form>
-    </div>
 
-  </section>
-  <script src="../scripts/editStreak.js"></script>
-  <script src="../scripts/DatabaseManager.js"></script>
-  <script>
-    skillname = localStorage.getItem("activeStreak")
-    document.getElementById("activity-name").innerHTML = skillname;
-    console.log(localStorage.getItem("activeStreak"))
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        // User logged in already or has just logged in.
-        console.log(user.uid);
-        document.getElementById("save").addEventListener("click", async function () {
-          await saveSkillInfo(user, skillname)
-          window.location.assign("./log-activity.html")
-        });
-      } else {
-        console.log("User is not logged in.")
-      }
+        <div class="container">
+          <h2 id="activity-name">Practice German</h2>
 
-      document.getElementById("delete-streak-button").addEventListener("click", async function () {
-        await deleteStreak(user, skillname);
-        window.location.assign("./main.html")
+          <p>This is a <span id="frequency">{frequency}</span> task</p>
+
+          <form id="form">
+            <fieldset class="mb-3">
+              <div class="form-group">
+                <label>Describe what you accomplished:</label>
+                <input type="text" placeholder="Today, I." id="log-description-textarea" class="form-control">
+              </div>
+            </fieldset>
+            <div class="d-flex justify-content-center mt-5">
+              <input id="done-button" type="submit" value="Done" class="btn btn-dark"/>
+            </div>
+          </form>
+        </div>
+
+        <div id="activity-log">
+          <!-- <ul id="activity-history" class="list-group">
+          </ul> -->
+          <table id="table-log-of-activities" class="table">
+            <thead>
+              <th>What you did</th>
+              <th>When you did it</th>
+              <th>At what time</th>
+            </thead>
+            <tbody id="activity-history">
+              <!-- <tr>
+                <td>I did a thing!</td>
+                <td>Today</td>
+              </tr> -->
+            </tbody>
+          </table>
+        </div>
+    </section>
+
+      <script src="./scripts/AddLog.js"></script>
+      <script>
+        document.getElementById("activity-name").innerHTML = localStorage.getItem("activeStreak");
+        console.log(localStorage.getItem("frequency"));
+        document.getElementById("frequency").innerHTML = localStorage.getItem("frequency");
+        firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+          // User logged in already or has just logged in.
+          console.log(user.uid);
+          PopulateLogs(user, localStorage.getItem("activeStreak"));
+          document.getElementById("form").addEventListener("submit", function() {
+            name = localStorage.getItem("activeStreak")
+            description = document.getElementById("log-description-textarea").value
+            if (description != ''){
+              CreateLog(user, name, description);
+            }
+            event.preventDefault()
+          });
+        } else {
+          console.log("User is not logged in.")
+        }
       });
-    });
-  </script>
 
-  <!-- Option 1: Bootstrap Bundle with Popper -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-    crossorigin="anonymous"></script>
-</body>
+      async function deleteLog(skillname, timestamp) {
+        firebase.auth().onAuthStateChanged(async (user) => {
+          await DeleteLog(user, skillname, timestamp)
+          location.reload();
+        })
+      }
+      </script>
 
+      <!-- Option 1: Bootstrap Bundle with Popper -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
 </html>
