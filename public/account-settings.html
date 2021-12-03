@@ -129,6 +129,7 @@
               displayname = document.getElementById("nameInput").value;
               photo = document.getElementById("photoInput").value;
               newemail = document.getElementById("emailInput").value
+              oldemail = user.email
               user.updateProfile({
                 displayName: displayname,
                 photoURL: photo
@@ -137,7 +138,11 @@
                 console.log(newemail, user.email)
                 user.updateEmail(newemail)
               }
-              window.location.assign("./profile.html")
+              if (newemail == oldemail) {
+                window.location.assign("./profile.html")
+              } else {
+                window.location.assign("./login.html")
+              }
             })
             document.getElementById("passwordInput").addEventListener("click", function () {
               email = document.getElementById("emailInput").value 
