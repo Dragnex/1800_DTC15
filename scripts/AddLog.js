@@ -41,7 +41,10 @@ function PopulateLogs(user, skillName){
             let dateWrapper = '<td class="streakDate">' + displayDate + '</td>'
             // let time = '<td class="streakTime">' + new Date(parseInt(sortedKeys[key])).toLocaleTimeString("en-US") + '</td>'
             let description = '<td class="streakDescription">' + userData.data()["Skills"][skillName]["iterations"][sortedKeys[key]]["description"] + '</td>'
-            currentSkill = skillTemplate.replace("TITLE", (description + dateWrapper + displayTime))
+            
+            let deleteButton = '<td class="deleteButton" onclick="deleteLog(SKILLNAME, TIMESTAMP)"><span class="material-icons">delete</span></td>'
+            
+            currentSkill = skillTemplate.replace("TITLE", (description + dateWrapper + displayTime + deleteButton)).replace("SKILLNAME", ("'" + skillName + "'")).replace("TIMESTAMP", ("'" + sortedKeys[key] + "'"))
 
             htmlObject.innerHTML = currentSkill
             document.getElementById("activity-history").appendChild(htmlObject)
@@ -57,4 +60,14 @@ function GetSortedObjectKeys(object){
     let sortedThing = keyArray.sort().reverse()
     console.log(sortedThing)
     return sortedThing
+}
+
+async function DeleteLog(user, skillName, timestamp){
+    let userDoc = db.collection("users").doc(user.uid);
+    let deleteJSON = {Skills: {}}
+    deleteJSON["Skills"][skillName] = {iterations: {}}
+    deleteJSON["Skills"][skillName]["iterations"][timestamp] = firebase.firestore.FieldValue.delete()
+    
+    await userDoc.set(deleteJSON, {merge: true})
+    //alert("Deleted Successfully")
 }
