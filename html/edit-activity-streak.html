@@ -96,8 +96,9 @@
       if (user) {
         // User logged in already or has just logged in.
         console.log(user.uid);
-        document.getElementById("save").addEventListener("click", function () {
-          saveSkillInfo(user, skillname)
+        document.getElementById("save").addEventListener("click", async function () {
+          await saveSkillInfo(user, skillname)
+          window.location.assign("./log-activity.html")
         });
       } else {
         console.log("User is not logged in.")

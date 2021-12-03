@@ -35,17 +35,15 @@ function populateInfo() {
 //call the function to run it
 populateInfo();
 
-function saveSkillInfo(user, skillName) {
+async function saveSkillInfo(user, skillName) {
     skillDescription = document.getElementById("descriptionInput").value;
-    skillFrequencyInput = document.getElementById("frequencyInput").value;
     skillFrequencySelect = document.getElementById("frequencySelect").value;
     let Skills = {}
     Skills[skillName] = {
         description: skillDescription,
-        interval: skillFrequencySelect,
-        perInterval: skillFrequencyInput
+        interval: skillFrequencySelect
     };
-    db.collection("users").doc(user.uid).set({
+    await db.collection("users").doc(user.uid).set({
         Skills
     }, { merge: true })
     .then(() => {
