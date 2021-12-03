@@ -82,7 +82,7 @@
                             //Determine whether the user is  anew user or not
                             if (authResult.additionalUserInfo.isNewUser){
                                 NewUser(user).then(async function(){
-                                    window.location.assign("./html/main.html");
+                                    window.location.assign("./main.html");
                                 })
                                 .catch(function(e){
                                     console.error("Error: " + e);
