@@ -80,12 +80,6 @@
                             var user = authResult.user;
                             //Determine whether the user is  anew user or not
                             if (authResult.additionalUserInfo.isNewUser){
-                                // db.collection("users").doc(user.uid).set({
-                                //     name: user.displayName,
-                                //     email: user.email,
-                                //     Skills: {
-                                //       test: "test"
-                                //     }
                                 NewUser(user).then(async function(){
                                     window.location.assign("../html/main.html");
                                 })
