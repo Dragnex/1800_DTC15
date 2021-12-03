@@ -9,7 +9,10 @@ async function LoadFriends(user, template){
     friends.get().then(friendsData => {
         friendsData.forEach(doc => {
             friendData = doc.data();
-            currentFriend = friendTemplate.replaceAll("NAME", friendData["name"]);
+            userId = doc.id
+            console.log(userId)
+            currentFriend = friendTemplate.replaceAll("NAME", friendData["name"]).replaceAll("UID", userId);
+            console.log(userId)
             document.getElementById("friends-list").innerHTML += currentFriend;
         });
         console.log(friendsData)
@@ -17,7 +20,6 @@ async function LoadFriends(user, template){
 }
 
 async function AddFriend(user, email){
-    
     await db.collection("users").doc(user.uid).update({
         "Friends": firebase.firestore.FieldValue.arrayUnion(email)
     })
