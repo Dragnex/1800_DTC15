@@ -6,6 +6,7 @@ body {
     display: grid;
     grid-template-rows: 70% 34% 60%;
     align-items: center;
+    padding: 10%;
 }
 
 header {
