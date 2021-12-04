@@ -9,6 +9,7 @@ function populateInfo() {
                     //go to the correct user document by referencing to the user uid
                     currentUser = db.collection("users").doc(user.uid)
                     //get the document for current user.
+                    // ******** READ FROM DATABASE *******
                     currentUser.get()
                         .then(userDoc => {
                             //get the data fields of the user
@@ -51,6 +52,7 @@ async function saveSkillInfo(user, skillName) {
         description: skillDescription,
         interval: skillFrequencySelect
     };
+    // ******* WRITE TO DATABASE *******
     await db.collection("users").doc(user.uid).set({
         Skills
     }, { merge: true })
@@ -61,8 +63,8 @@ async function saveSkillInfo(user, skillName) {
 
 /**
  * Deletes the skill from the user's collection
- * @param {object} user 
- * @param {string} skillName 
+ * @param {object} user a user object with a skills key
+ * @param {string} skillName a string for which skill we are deleting
  */
 async function deleteStreak(user, skillName){
     let userDoc = db.collection("users").doc(user.uid);
@@ -70,6 +72,7 @@ async function deleteStreak(user, skillName){
     deleteJSON["Skills"][skillName] = firebase.firestore.FieldValue.delete()
 
     console.log(userDoc[deleteJSON], deleteJSON)
+    // ******* WRITE TO DATABASE *******
     await userDoc.set(deleteJSON, {merge: true})
     //alert("Deleted Successfully")
 }

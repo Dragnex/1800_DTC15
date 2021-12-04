@@ -18,6 +18,7 @@ function CreateLog(user, name, description){
         description: description
     }
     console.log(timestamp)
+    // ********** WRITE ENTRY TO DATABASE ************
     db.collection("users").doc(user.uid).set({
         Skills
     }, { merge: true }).then(function(){
@@ -32,6 +33,7 @@ function CreateLog(user, name, description){
  * @returns the list of logs from the user's skill
  */
 function PopulateLogs(user, skillName){
+    // ******* READ INFO FROM DATABASE *******
     let logList = db.collection("users").doc(user.uid).get().then(userData => {
         let skillTemplate = '<tr class="streak-title">TITLE</tr>'
         console.log(userData.data())
@@ -39,7 +41,6 @@ function PopulateLogs(user, skillName){
         console.log(sortedKeys)
         for (let key in sortedKeys){
             htmlObject = document.createElement('tr')
-            // htmlObject.setAttribute("class", "list-group-item")
             let date = new Date(parseInt(sortedKeys[key])).toLocaleDateString("en-US")
             let today = new Date(new Date().getTime()).toLocaleDateString("en-US");
             let displayDate;
@@ -51,11 +52,10 @@ function PopulateLogs(user, skillName){
             let displayTime = '<td class="streakTime">' + new Date(parseInt(sortedKeys[key])).toLocaleTimeString("en-US") + '</td>'
             console.log(displayTime)
             let dateWrapper = '<td class="streakDate">' + displayDate + '</td>'
-            // let time = '<td class="streakTime">' + new Date(parseInt(sortedKeys[key])).toLocaleTimeString("en-US") + '</td>'
             let description = '<td class="streakDescription">' + userData.data()["Skills"][skillName]["iterations"][sortedKeys[key]]["description"] + '</td>'
-            
+
             let deleteButton = '<td class="deleteButton" onclick="deleteLog(SKILLNAME, TIMESTAMP)"><span class="material-icons">delete</span></td>'
-            
+
             currentSkill = skillTemplate.replace("TITLE", (description + dateWrapper + displayTime + deleteButton)).replace("SKILLNAME", ("'" + skillName + "'")).replace("TIMESTAMP", ("'" + sortedKeys[key] + "'"))
 
             htmlObject.innerHTML = currentSkill
@@ -67,7 +67,7 @@ function PopulateLogs(user, skillName){
 
 /**
  * Gets the keys from an object and sorts them
- * @param {object} object 
+ * @param {object} object a javascript object
  * @returns sorted array of keys from an object
  */
 function GetSortedObjectKeys(object){
@@ -90,7 +90,8 @@ async function DeleteLog(user, skillName, timestamp){
     let deleteJSON = {Skills: {}}
     deleteJSON["Skills"][skillName] = {iterations: {}}
     deleteJSON["Skills"][skillName]["iterations"][timestamp] = firebase.firestore.FieldValue.delete()
-    
+
+    // ******* DELETE OBJECT FROM DATABASE *******
     await userDoc.set(deleteJSON, {merge: true})
     //alert("Deleted Successfully")
 }

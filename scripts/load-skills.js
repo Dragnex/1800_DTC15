@@ -2,10 +2,11 @@
  * Gets user's skills and loads it to the page
  * @param {object} user user information
  * @param {object} template html template for skill
- * @returns 
+ * @returns an object containing user skills info
  */
 function PopulateSkills(user, template){
     let skillTemplate = template;
+    // ******* DATABASE READ *******
     let finalSkills = db.collection("users").doc(user.uid).get().then(userData => {
         console.log(userData.data())
         let timestamp = new Date().getTime();
@@ -33,6 +34,7 @@ function insertName() {
             //go to the correct user document by referencing to the user uid
             currentUser = db.collection("users").doc(user.uid);
             //get the document for current user.
+            // ******** DATABASE READ ********
             currentUser.get()
                   .then(userDoc => {
                var user_Name = userDoc.data().name;
@@ -66,7 +68,7 @@ function RedirectStreakDetails(id, id2){
  * @param {string} value value of logs
  * @param {string} interval interval of log
  * @param {Array} logKeys array of keys for logs
- * @returns 
+ * @returns how many days in a row a user has completed a task
  */
 function GetStreakLength(logs, key, value, interval, logKeys) {
     let intervalObj = {"weekly": 604800000, "monthly": 2419000000, "daily": 86400000}

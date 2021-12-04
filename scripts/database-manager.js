@@ -24,15 +24,14 @@ function CreateSkill(user, name, description, eachInterval){
 
 /**
  * Creates a new collection for the user
- * @param {object} user 
+ * @param {object} user a user object with name and email keys
  */
 async function NewUser(user){
+    // ******* WRITE TO DATABASE *******
     await db.collection("users").doc(user.uid).set({
         name: user.displayName,
         email: user.email,
-        Skills: {
-            
-        }
+        Skills: {}
     })
 }
 

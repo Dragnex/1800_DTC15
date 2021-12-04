@@ -5,12 +5,13 @@
  */
 async function LoadFriends(user, template){
     let friendTemplate = template;
+    // ******* READ FROM DATABASE *******
     let friendArray = await db.collection("users").doc(user.uid).get().then(userData => {
         return userData.data()["Friends"];
     })
     console.log(friendArray)
     let friends = await db.collectionGroup('users').where('email', 'in', friendArray);
-    
+    // ******* READ FROM DATABASE *******
     friends.get().then(friendsData => {
         friendsData.forEach(doc => {
             friendData = doc.data();
@@ -30,6 +31,7 @@ async function LoadFriends(user, template){
  * @param {string} email searched email
  */
 async function AddFriend(user, email){
+    // ******* WRITE TO DATABASE *******
     await db.collection("users").doc(user.uid).update({
         "Friends": firebase.firestore.FieldValue.arrayUnion(email)
     })
