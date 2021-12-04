@@ -23,7 +23,7 @@
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
     <title>SkillStreaks - Add An Activity Streak</title>
-    <script src="../scripts/FirebaseData.js"></script>
+    <script src="../scripts/firebase-data.js"></script>
   </head>
   <body>
     <div class="pos-f-t">
@@ -73,7 +73,7 @@
       </div>
     </section>
 
-    <script src="../scripts/DatabaseManager.js"></script>
+    <script src="../scripts/database-manager.js"></script>
     <script>
       firebase.auth().onAuthStateChanged((user) => {
         if (user) {

@@ -27,7 +27,7 @@
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
     <title>SkillStreaks - My Streaks List</title>
-    <script src="../scripts/FirebaseData.js"></script>
+    <script src="../scripts/firebase-data.js"></script>
   </head>
   <body>
     <div class="pos-f-t">
@@ -86,9 +86,9 @@
 
     </section>
 
-    <script src="../scripts/DatabaseManager.js"></script>
-    <script src="../scripts/AddLog.js"></script>
-    <script src="../scripts/LoadSkills.js"></script>
+    <script src="../scripts/database-manager.js"></script>
+    <script src="../scripts/add-log.js"></script>
+    <script src="../scripts/load-skills.js"></script>
     <script>
       firebase.auth().onAuthStateChanged((user) => {
         if (user) {

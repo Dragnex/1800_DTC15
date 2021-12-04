@@ -32,7 +32,7 @@
   <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
     <title>SkillStreaks - Edit Activity Streak</title>
-    <script src="../scripts/FirebaseData.js"></script>
+    <script src="../scripts/firebase-data.js"></script>
   </head>
   <body>
     <div class="pos-f-t">
@@ -86,8 +86,8 @@
     </div>
 
   </section>
-  <script src="../scripts/editStreak.js"></script>
-  <script src="../scripts/DatabaseManager.js"></script>
+  <script src="../scripts/edit-streak.js"></script>
+  <script src="../scripts/database-manager.js"></script>
   <script>
     skillname = localStorage.getItem("activeStreak")
     document.getElementById("activity-name").innerHTML = skillname;
