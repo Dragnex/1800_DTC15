@@ -1,12 +1,10 @@
 body {
-    height: 100vh;
-    display: block;
-    align-content: center;
-    padding: 10%;
 }
 
 #content {
-    margin-top: 40%;
-    padding: 5%;
     background-color: white;
+    display: grid;
+    padding: 10%;
+    grid-template-rows: 70% 34% 60%;
+    align-items: center;
 }

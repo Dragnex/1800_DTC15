@@ -5,18 +5,14 @@
 * [Contents](#content)
 
 ## General Info
-This browser based web application to ...
-Hello this is Sam
-
-    Dragnex is here
-ayo this is my line!
+This is SkillStreaks, a browser based web application to help users track how often they're working towards their goals.
 
 ## Technologies
 Technologies used for this project:
 * HTML, CSS
 * JavaScript
 * Bootstrap
-* ...
+* Firebase/Firestore
 
 ## Content
 Content of the project folder:
@@ -31,10 +27,12 @@ It has the following subfolders and files:
 ├── .git                     # Folder for git repo
 ├── images                   # Folder for images
     /blah.jpg                #
-├── scripts                  # Folder for scripts
+├── scripts                  # Folder for javascript scripts
     /blah.js                 #
-├── styles                   # Folder for styles
+├── css                      # Folder for css stylesheets
     /blah.css                #
+├── html                     # Folder for html documents
+    /blah.html               #
 
 Firebase hosting files:
 ├── .firebaserc...
