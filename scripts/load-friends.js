@@ -1,3 +1,8 @@
+/**
+ * Gets the user's friends and loads it to the page
+ * @param {object} user user information
+ * @param {object} template html template for friend
+ */
 async function LoadFriends(user, template){
     let friendTemplate = template;
     let friendArray = await db.collection("users").doc(user.uid).get().then(userData => {
@@ -19,6 +24,11 @@ async function LoadFriends(user, template){
     });
 }
 
+/**
+ * Searches for friend's email and adds it to the user's friends
+ * @param {object} user user information
+ * @param {string} email searched email
+ */
 async function AddFriend(user, email){
     await db.collection("users").doc(user.uid).update({
         "Friends": firebase.firestore.FieldValue.arrayUnion(email)

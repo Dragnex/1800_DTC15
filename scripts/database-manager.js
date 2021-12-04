@@ -1,3 +1,10 @@
+/**
+ * Creates a skill in the user information
+ * @param {object} user user information
+ * @param {string} name skill's name
+ * @param {string} description skill's description
+ * @param {string} eachInterval skill's frequency
+ */
 function CreateSkill(user, name, description, eachInterval){
     let Skills = {}
     Skills[name] = {
@@ -15,6 +22,10 @@ function CreateSkill(user, name, description, eachInterval){
     })
 }
 
+/**
+ * Creates a new collection for the user
+ * @param {object} user 
+ */
 async function NewUser(user){
     await db.collection("users").doc(user.uid).set({
         name: user.displayName,
@@ -25,6 +36,11 @@ async function NewUser(user){
     })
 }
 
+/**
+ * Sets the active streak information
+ * @param {string} id streak name
+ * @param {string} id2 frequency of streak
+ */
 function setActiveStreak(id, id2){
     localStorage.setItem('activeStreak', id);
     localStorage.setItem('frequency', id2);

@@ -1,3 +1,9 @@
+/**
+ * Creates a goal log
+ * @param {object} user user information
+ * @param {string} name name of the user
+ * @param {string} description description of the log
+ */
 function CreateLog(user, name, description){
     let Skills = {}
     let timestamp = new Date().getTime()
@@ -19,6 +25,12 @@ function CreateLog(user, name, description){
     })
 }
 
+/**
+ * Reads and loads logs
+ * @param {object} user user information
+ * @param {string} skillName the skill's name
+ * @returns the list of logs from the user's skill
+ */
 function PopulateLogs(user, skillName){
     let logList = db.collection("users").doc(user.uid).get().then(userData => {
         let skillTemplate = '<tr class="streak-title">TITLE</tr>'
@@ -53,6 +65,11 @@ function PopulateLogs(user, skillName){
     return logList
 }
 
+/**
+ * Gets the keys from an object and sorts them
+ * @param {object} object 
+ * @returns sorted array of keys from an object
+ */
 function GetSortedObjectKeys(object){
     console.log(object)
     let keyArray = Object.keys(object);
@@ -62,6 +79,12 @@ function GetSortedObjectKeys(object){
     return sortedThing
 }
 
+/**
+ * Deletes the log from the user's skill
+ * @param {object} user user information
+ * @param {string} skillName the skill's name
+ * @param {string} timestamp timestamp of when the log was made
+ */
 async function DeleteLog(user, skillName, timestamp){
     let userDoc = db.collection("users").doc(user.uid);
     let deleteJSON = {Skills: {}}

@@ -1,3 +1,6 @@
+/**
+ * Gets information from user and loads their skill information
+ */
 function populateInfo() {
             firebase.auth().onAuthStateChanged(user => {
                 // Check if user is signed in:
@@ -35,6 +38,11 @@ function populateInfo() {
 //call the function to run it
 populateInfo();
 
+/**
+ * Updates the skill information
+ * @param {object} user user information
+ * @param {string} skillName skill's name
+ */
 async function saveSkillInfo(user, skillName) {
     skillDescription = document.getElementById("descriptionInput").value;
     skillFrequencySelect = document.getElementById("frequencySelect").value;
@@ -51,6 +59,11 @@ async function saveSkillInfo(user, skillName) {
     })
 }
 
+/**
+ * Deletes the skill from the user's collection
+ * @param {object} user 
+ * @param {string} skillName 
+ */
 async function deleteStreak(user, skillName){
     let userDoc = db.collection("users").doc(user.uid);
     let deleteJSON = {Skills: {}}
